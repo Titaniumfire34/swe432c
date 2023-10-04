@@ -106,6 +106,7 @@
                 width: 2200px;
                 align-items: center;
                 border: solid;
+                border-color: #a9a9a9;
                 overflow-x: scroll;
                 white-space: nowrap;
             }
@@ -118,6 +119,13 @@
                 align-items: center;
                 border: solid;
             }
+            .border .content dialog{
+                border-color: #a9a9a9;
+                background-color: #470202;
+                margin-left: 20.5%;
+                margin-top: 17%;
+                width: 150px;
+            }
         </style>
         <nav class = "navbar">
             <div class = "Producer">
@@ -127,7 +135,7 @@
                 <a href="/Listener" >Listener</a>
             </div>
             <div class = "Dj">
-                <a href="/">Dj</a>
+                <a href="/">DJ</a>
             </div>
             <h1> DJ Home </h1>
         </nav>
@@ -135,6 +143,12 @@
     <body>
         <div class="border"> 
             <main class = "content"> 
+                <dialog open> 
+                    <p style="background-color: #470202; color: #a9a9a9;">October 1st Selected</p>
+                    <form style="background-color: #470202;" method="dialog">
+                        <button style="background-color: #470202;color: #a9a9a9; border-color: #a9a9a9; margin-top: 10px; width: 50px;">OK</button>
+                    </form>
+                </dialog>
                 <table id="Week">
                     <caption>Select Day of the week</caption>
                     <tr>

@@ -8,10 +8,18 @@
                 padding: 10px; border: solid; background-color: #202122;
                 margin-right: 40px;
                 margin-left: 30%;
+                flex-wrap: nowrap;
             }
             .border .content #head{
                 background-color: #202122;
-                margin-left: 40%;  
+                margin-left: 40%; 
+                width: 350px; 
+                border: solid;
+                padding: 5px;
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
             }
             .border .content .boxHeadings{
                 background-color: #202122;
@@ -23,6 +31,14 @@
                 float: left;
                 margin-left: 100px;
                 margin-right: 100px;
+            }
+
+            .border .content .boxHeadings .AsHead input{
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                width: 400px;
             }
             .border .content .boxHeadings .PrHead{
                 margin-left: 50%;
@@ -43,10 +59,10 @@
                 width: 2400px;
             }
             .border .content .box .Assigned{
-                border-bottom: 2px solid #a9a9a9;
+                border-bottom: 4px solid #a9a9a9;
                 border-left: 2px solid #a9a9a9;
                 border-top: 2px solid #a9a9a9 ;
-                border-right: 2px solid #a9a9a9;
+                border-right: 4px solid #a9a9a9;
                 overflow-y: auto;
                 height: 800px;
                 float: left;
@@ -64,6 +80,24 @@
             .border .content .box .Assigned table thead th{
                 position: sticky;
                 top: 0;
+                border-bottom: 4px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                height: 30px;
+                font-size: 20px;
+            }
+            .border .content .box .Assigned table tbody tr{
+                margin-bottom: 5%;
+                border-bottom: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+            }
+
+            .border .content .box .Assigned table tbody tr td{
+                border-right: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9 ;
+                text-align: center;
+                height: 20px;
             }
             .border .content .box .Previous{
                 border-bottom: 2px solid #a9a9a9;
@@ -94,12 +128,19 @@
             .border .content .box .Previous ul li {
                 margin-top: 10px;
                 margin-bottom: 10px;
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                padding: 20px;
+                margin-left: -5%;
             }
             .border .content .box .Previous ul p {
                 margin-left: 10%;
             }
             .border .content .box .Previous ul button {
-                margin-left: 10%;
+                margin-left: 42%;
+                padding: 10px;
                 border-bottom: 2px solid #a9a9a9;
                 border-left: 2px solid #a9a9a9;
                 border-top: 2px solid #a9a9a9 ;
@@ -114,7 +155,7 @@
                 <a href="/Listener" >Listener</a>
             </div>
             <div class = "Dj">
-                <a href="/">Dj</a>
+                <a href="/">DJ</a>
             </div>
             <h1> DJ Timeslot </h1>
             <div class = "DjBack">
@@ -125,7 +166,7 @@
     <body>
         <div class="border"> 
             <main class = "content">
-                <h1 id="head"> 3:00pm October 1st,2023</h1>
+                <h1 id="head"> 3:00pm October 1st, 2023</h1>
                 <header class="boxHeadings">
                     <div class="AsHead">
                         <h1>Assigned PlayList</h1>
@@ -143,222 +184,178 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Song Name</th>
+                                    <th style="width: 25%">Song Name</th>
                                     <th>Description</th>
-                                    <th>Options</th>
+                                    <th style="width: 10%">Options</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
                                 <tr>
                                     <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> description</td>
                                     <td> Edit</td>
                                 </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </article>
                     <article class="Previous">
-                        <div class="listHead"><h1 id="name" style="display: inline-block;">PlayList Name</h1><h1 id="Description" style="display: inline-block;"> Description</h1><h1 id="button" style="display: inline-block;"> Option</h1></div>
+                        <div class="listHead"><h1 id="name" style="display: inline-block;">PlayList Name</h1><h1 id="Description" style="display: inline-block;"> Description</h1><h1 id="button" style="display: inline-block;margin-left: 40%;"> Option</h1></div>
                         <ul style="list-style-type: none;">
                             <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
                             <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
@@ -382,13 +379,7 @@
                             <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
                             <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
                             <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
-                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
-                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
-                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
-                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
-                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
-                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
-                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+
                             <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
                             <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
                             <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
