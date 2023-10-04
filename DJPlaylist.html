@@ -1,86 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="DJStyle.css">
         <title>DJPlaylist</title>
         <style>
-            * {
-                margin: 0;
-                color: #6699CC;
-                background-color: #202122;
-            }
-            ::-webkit-scrollbar {
-                -webkit-appearance: none;
-                width: 15px;
-            }
-            ::-webkit-scrollbar-thumb {
-                background:#6699CC;
-            }
-
-            ::-webkit-scrollbar-track {
-                background-color:#202122;
-            }
-            .navbar {
-                padding: 20px;
-                display: flex;
-                align-items: center;
-                max-width: 2400px;
-                max-height: 10%;
-                margin: 0 auto;
-                border-bottom: 2px solid #a9a9a9;
-                border-left: 2px solid #a9a9a9;
-                border-top: 2px solid #a9a9a9 ;
-                border-right: 2px solid #a9a9a9;
-                background-color: #202122;
-                margin-top: 1%;
-                margin-bottom: 1%;
-                position: relative;
-            }
-            .navbar h1 {
-                color: #6699CC;
-                background-color: #202122;
-                margin-bottom: 10px;
-                margin-left: 600px;
-                font-size: 50px;
-                text-align: center;
-            }
-            .navbar .Producer {
-                padding: 10px; border: solid; background-color: #202122;
-                margin-right: 40px;
-                margin-left: 40px;
-            }
-
-            .navbar .Listener {
-                padding: 10px; border: solid; background-color: #202122;
-                margin-right: 40px;
-                margin-left: 40px;
-            }
-
-            .navbar .Dj {
-                padding: 10px; border: solid; background-color: #202122;
-                margin-right: 40px;
-                margin-left: 40px;
-            }
-
-            .border {
-                padding: 20px;
-                display: flex;
-                align-items: top;
-                max-width: 2400px;
-                width: 2400px;
-                max-height: 2000px;
-                height: 1000px;
-                margin: 0 auto;
-                border-bottom: 10px solid #a9a9a9;
-                border-left: 10px solid #a9a9a9;
-                border-top: 10px solid #a9a9a9 ;
-                border-right: 10px solid #a9a9a9;
-                background-color: #202122;
-                position: relative;
-            }
-            .border .content{
-                background-color: #202122;
-                width: 2400px;   
-            }
             .border .content .boxHeadings{
                 background-color: #202122;
                 display: inline-block;  
@@ -156,7 +79,7 @@
                 top: 0;
             }
         </style>
-        <div class = "navbar">
+        <nav class = "navbar">
             <div class = "Producer">
                 <a href="/Producer" >Producer</a> 
             </div>
@@ -166,13 +89,13 @@
             <div class = "Dj">
                 <a href="/">Dj</a>
             </div>
-            <h1> DJ Playlist Edit </h1>
-        </div>
+            <h1>DJ PlayList Edit</h1>
+        </nav>
     </head>
     <body>
         <div class="border"> 
-            <div class = "content">
-                <div class="boxHeadings">
+            <main class = "content">
+                <header class="boxHeadings">
                     <div class="AsHead">
                         <h1>Assigned PlayList</h1>
                         <label for="searchSongs" style="font-size: 30px;"> search for songs:</label>
@@ -183,9 +106,9 @@
                         <label for="searchPlaylist" style="font-size: 30px;"> search for playlist:</label>
                         <input type="text" id="searchPlaylist">
                     </div>
-                </div>
-                <div class="box">
-                    <div class = "Assigned">
+                </header>
+                <section class="box">
+                    <article class = "Assigned">
                         <table>
                             <thead>
                                 <tr>
@@ -257,8 +180,8 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="Previous">
+                    </article>
+                    <article class="Previous">
                         <table>    
                             <thead>
                                 <tr>
@@ -330,13 +253,13 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-                <div class="Buttons">
+                    </article>
+                </section>
+                <footer class="Buttons">
                     <button>Back</button>
                     <button>Save</button>
-                </div>
-            </div>
+                </footer>
+            </main>
         </div>
     </body>
 </html>

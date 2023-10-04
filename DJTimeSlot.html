@@ -1,91 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="DJStyle.css">
         <title>DJTimeSlot</title>
         <style>
-            * {
-                margin: 0;
-                color: #6699CC;
-                background-color: #202122;
-            }
-            ::-webkit-scrollbar {
-                -webkit-appearance: none;
-                width: 15px;
-            }
-            ::-webkit-scrollbar-thumb {
-                background:#6699CC;
-            }
-
-            ::-webkit-scrollbar-track {
-                background-color:#202122;
-            }
-            .navbar {
-                padding: 20px;
-                display: flex;
-                align-items: center;
-                max-width: 2400px;
-                max-height: 10%;
-                margin: 0 auto;
-                border-bottom: 2px solid #a9a9a9;
-                border-left: 2px solid #a9a9a9;
-                border-top: 2px solid #a9a9a9 ;
-                border-right: 2px solid #a9a9a9;
-                background-color: #202122;
-                margin-top: 1%;
-                margin-bottom: 1%;
-                position: relative;
-            }
-            .navbar h1 {
-                color: #6699CC;
-                background-color: #202122;
-                margin-bottom: 10px;
-                margin-left: 600px;
-                font-size: 50px;
-                text-align: center;
-            }
-            .navbar .Producer {
-                padding: 10px; border: solid; background-color: #202122;
-                margin-right: 40px;
-                margin-left: 40px;
-            }
-
-            .navbar .Listener {
-                padding: 10px; border: solid; background-color: #202122;
-                margin-right: 40px;
-                margin-left: 40px;
-            }
-
-            .navbar .Dj {
-                padding: 10px; border: solid; background-color: #202122;
-                margin-right: 40px;
-                margin-left: 40px;
-            }
-
             .navbar .DjBack {
                 padding: 10px; border: solid; background-color: #202122;
                 margin-right: 40px;
                 margin-left: 30%;
-            }
-
-            .border {
-                padding: 20px;
-                display: flex;
-                align-items: top;
-                max-width: 2400px;
-                width: 2400px;
-                max-height: 2000px;
-                height: 1000px;
-                margin: 0 auto;
-                border-bottom: 10px solid #a9a9a9;
-                border-left: 10px solid #a9a9a9;
-                border-top: 10px solid #a9a9a9 ;
-                border-right: 10px solid #a9a9a9;
-                background-color: #202122;
-                position: relative;
-            }
-            .border .content{
-                background-color: #202122;
-                width: 2400px;   
             }
             .border .content #head{
                 background-color: #202122;
@@ -156,17 +78,35 @@
                 margin-top: 10px;
                 
             }
-            .border .content .box .Previous table{
-                border-collapse: collapse;
-                width: 100%;        
+            .border .content .box .Previous .listHead{
+                position: sticky;
+                top: 0;      
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+            }
+
+            .border .content .box .Previous .listHead h1{
+                margin-left: 10%;          
                 
             }
-            .border .content .box .Previous table thead th{
-                position: sticky;
-                top: 0;
+            .border .content .box .Previous ul li {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .border .content .box .Previous ul p {
+                margin-left: 10%;
+            }
+            .border .content .box .Previous ul button {
+                margin-left: 10%;
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
             }
         </style>
-        <div class = "navbar">
+        <nav class = "navbar">
             <div class = "Producer">
                 <a href="/Producer" >Producer</a> 
             </div>
@@ -180,13 +120,13 @@
             <div class = "DjBack">
                 <a href="/">Back To DJ Menu</a>
             </div>
-        </div>
+        </nav>
     </head>
     <body>
         <div class="border"> 
-            <div class = "content">
+            <main class = "content">
                 <h1 id="head"> 3:00pm October 1st,2023</h1>
-                <div class="boxHeadings">
+                <header class="boxHeadings">
                     <div class="AsHead">
                         <h1>Assigned PlayList</h1>
                         <label for="searchSongs" style="font-size: 30px;"> search for songs:</label>
@@ -197,9 +137,9 @@
                         <label for="searchPlaylist" style="font-size: 30px;"> search for playlist:</label>
                         <input type="text" id="searchPlaylist">
                     </div>
-                </div>
-                <div class="box">
-                    <div class = "Assigned">
+                </header>
+                <section class="box">
+                    <article class = "Assigned">
                         <table>
                             <thead>
                                 <tr>
@@ -416,82 +356,51 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="Previous">
-                        <table>    
-                            <thead>
-                                <tr>
-                                    <th>PlayList Name</th>
-                                    <th>Description</th>
-                                    <th>Go To Playlist</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
-                                    <td> Edit</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                    </article>
+                    <article class="Previous">
+                        <div class="listHead"><h1 id="name" style="display: inline-block;">PlayList Name</h1><h1 id="Description" style="display: inline-block;"> Description</h1><h1 id="button" style="display: inline-block;"> Option</h1></div>
+                        <ul style="list-style-type: none;">
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                            <li><p style="display: inline-block;">What a Name</p> <p style="display: inline-block;"> Describe playlist</p> <button>Option</button></li>
+                        </ul>
+                    </article>
+                </section>
+            </main>
         </div>
     </body>
 </html>
