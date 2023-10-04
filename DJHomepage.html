@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<htm lang="en">
+    <head>
+        <title>DJHome</title>
+        <style>
+            * {
+                margin: 0;
+                color: #6699CC;
+                background-color: #202122;
+            }
+
+            .navbar {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                max-width: 2400px;
+                max-height: 10%;
+                margin: 0 auto;
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                background-color: #202122;
+                margin-top: 1%;
+                margin-bottom: 1%;
+                position: relative;
+            }
+            .navbar h1 {
+                color: #6699CC;
+                background-color: #202122;
+                margin-bottom: 10px;
+                margin-left: 600px;
+                font-size: 50px;
+                text-align: center;
+            }
+            .navbar .Producer {
+                padding: 10px; border: solid; background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+
+            .navbar .Listener {
+                padding: 10px; border: solid; background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+
+            .navbar .Dj {
+                padding: 10px; border: solid; background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+
+            .border {
+                padding: 20px;
+                display: flex;
+                align-items: top;
+                max-width: 2400px;
+                width: 2400px;
+                max-height: 2000px;
+                height: 1000px;
+                margin: 0 auto;
+                border-bottom: 10px solid #a9a9a9;
+                border-left: 10px solid #a9a9a9;
+                border-top: 10px solid #a9a9a9 ;
+                border-right: 10px solid #a9a9a9;
+                background-color: #202122;
+                position: relative;
+            }
+            .border .content{
+                background-color: #202122;
+                width: 2400px;   
+            }
+
+            .border .content #Week{
+                padding: 20px;  
+                background-color: #202122;
+                margin-right: 300px;
+                margin-left: 300px;
+                margin-top: 40px;
+                font-size: 30px;
+                align-items: center;
+            }
+
+            .border .content #Week th{
+                padding: 20px; 
+                border: solid 2pt #a9a9a9; 
+                background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+            .border .content #Week tr{
+                padding: 20px; 
+                border: solid 2pt #a9a9a9; 
+                background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+
+            .border .content #Week td{
+                padding: 20px; 
+                border: solid 2pt #a9a9a9; 
+                background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+                margin-bottom: 40px;
+                height: 100px;
+            }
+            .border .content #Week caption{
+                padding: 10px;
+                font-size: 40px;
+                background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            .border .content #Week td button{
+                padding: 10px; 
+                border: solid;
+                display: inline; 
+                background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+                margin-bottom: 50px;
+            }
+            .border .content h1 {
+                padding: 10px;  
+                background-color: #202122;
+                margin-top: 40px;
+                margin-right: 1000px;
+                margin-left: 1000px;
+            }
+            .border .content hr {
+                color: #6699CC;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                margin-right: 850px;
+                margin-left: 800px;
+                text-align: center;
+            }
+
+            .border .content #timezone {
+                padding: 10px; 
+                border: solid;
+                display: inline;
+                align-items: center; 
+                background-color: #202122;
+                margin-right: 100px;
+                margin-top: 40px;
+                margin-left: 900px;
+            }
+
+            .border .content #date {
+                padding: 10px; 
+                border: solid;
+                display: inline;
+                align-items: center; 
+                background-color: #202122;
+                margin-right: 900px;
+                margin-top: 40px;
+                margin-left: 100px
+            }
+
+            .border .content #Timeslots {
+                padding: 10px;  
+                background-color: #202122;
+                margin-right: 100px;
+                margin-left: 100px;
+                margin-top: 40px;
+                max-height: 100px;
+                height: 100px;
+                max-width: 2200px;
+                width: 2200px;
+                align-items: center;
+                border: solid;
+                overflow-x: scroll;
+                white-space: nowrap;
+            }
+            ::-webkit-scrollbar {
+                -webkit-appearance: none;
+                width: 15px;
+            }
+            ::-webkit-scrollbar-thumb {
+                background:#6699CC;
+            }
+
+            ::-webkit-scrollbar-track {
+                background-color:#202122;
+            }
+            .border .content #Timeslots #timeslot {
+                padding: 20px;  
+                background-color: #202122;
+                margin-right: 30px;
+                margin-left: 30px;
+                margin-top: 20px;
+                align-items: center;
+                border: solid;
+            }
+        </style>
+        <div class = "navbar">
+            <div class = "Producer">
+                <a href="/Producer" >Producer</a> 
+            </div>
+            <div class = "Listener">
+                <a href="/Listener" >Listener</a>
+            </div>
+            <div class = "Dj">
+                <a href="/">Dj</a>
+            </div>
+            <h1> DJ Home </h1>
+        </div>
+    </head>
+    <body>
+        <div class="border"> 
+            <div class = "content"> 
+                <table id="Week">
+                    <caption>Select Day of the week</caption>
+                    <tr>
+                        <th style="border:none;"></th>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th style="border:none;"></th>
+                    </tr>
+                    <tr>
+                        <td style="border:none;font-size: 50px;"><button id="button"> &#8592<i class="arrow left"></i> </button></td>
+                        <td>October 1st<br> 2023</td>
+                        <td>October 2nd<br> 2023</td>
+                        <td>October 3rd<br> 2023</td>
+                        <td>October 4th<br> 2023</td>
+                        <td>October 5th<br> 2023</td>
+                        <td>October 6th<br> 2023</td>
+                        <td>October 7th<br> 2023</td>
+                        <td style="border:none; font-size: 50px;"> <button> &#8594<i class="arrow right"></i> </button></td>
+                    </tr>
+                </table>
+                <h1>Select Time Slot</h1>
+                <hr>
+                <p id="timezone">TimeZone: U.S Eastern</p> 
+                <p id="date">Date: Oct 1st, 2023</p>
+                <br>
+                <div id="Timeslots">
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                    <button id="timeslot"> 3:00pm</button>
+                </div>            
+            </div>
+        </div>
+    </body>
+</html>

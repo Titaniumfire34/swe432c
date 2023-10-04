@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DJTimeSlot</title>
+        <style>
+            * {
+                margin: 0;
+                color: #6699CC;
+                background-color: #202122;
+            }
+            ::-webkit-scrollbar {
+                -webkit-appearance: none;
+                width: 15px;
+            }
+            ::-webkit-scrollbar-thumb {
+                background:#6699CC;
+            }
+
+            ::-webkit-scrollbar-track {
+                background-color:#202122;
+            }
+            .navbar {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                max-width: 2400px;
+                max-height: 10%;
+                margin: 0 auto;
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                background-color: #202122;
+                margin-top: 1%;
+                margin-bottom: 1%;
+                position: relative;
+            }
+            .navbar h1 {
+                color: #6699CC;
+                background-color: #202122;
+                margin-bottom: 10px;
+                margin-left: 600px;
+                font-size: 50px;
+                text-align: center;
+            }
+            .navbar .Producer {
+                padding: 10px; border: solid; background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+
+            .navbar .Listener {
+                padding: 10px; border: solid; background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+
+            .navbar .Dj {
+                padding: 10px; border: solid; background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+            }
+
+            .navbar .DjBack {
+                padding: 10px; border: solid; background-color: #202122;
+                margin-right: 40px;
+                margin-left: 30%;
+            }
+
+            .border {
+                padding: 20px;
+                display: flex;
+                align-items: top;
+                max-width: 2400px;
+                width: 2400px;
+                max-height: 2000px;
+                height: 1000px;
+                margin: 0 auto;
+                border-bottom: 10px solid #a9a9a9;
+                border-left: 10px solid #a9a9a9;
+                border-top: 10px solid #a9a9a9 ;
+                border-right: 10px solid #a9a9a9;
+                background-color: #202122;
+                position: relative;
+            }
+            .border .content{
+                background-color: #202122;
+                width: 2400px;   
+            }
+            .border .content #head{
+                background-color: #202122;
+                margin-left: 40%;  
+            }
+            .border .content .boxHeadings{
+                background-color: #202122;
+                display: inline-block;  
+                vertical-align: middle; 
+                width: 2400px;
+            }
+            .border .content .boxHeadings .AsHead{
+                float: left;
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+            .border .content .boxHeadings .PrHead{
+                margin-left: 50%;
+            }
+
+            .border .content .boxHeadings .PrHead input{
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                width: 400px;
+            }
+
+            .border .content .box{
+                background-color: #202122;
+                display: inline-block;  
+                vertical-align: middle; 
+                width: 2400px;
+            }
+            .border .content .box .Assigned{
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                overflow-y: auto;
+                height: 800px;
+                float: left;
+                width: 1000px;
+                margin-left: 100px;
+                margin-right: 100px;
+                margin-top: 10px;
+                
+            }
+            .border .content .box .Assigned table{
+                border-collapse: collapse; 
+                width: 100%;         
+                
+            }
+            .border .content .box .Assigned table thead th{
+                position: sticky;
+                top: 0;
+            }
+            .border .content .box .Previous{
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                overflow-y: auto;
+                height: 800px;
+                width: 1000px;
+                margin-left: 100px;
+                margin-right: 100px;
+                margin-top: 10px;
+                
+            }
+            .border .content .box .Previous table{
+                border-collapse: collapse;
+                width: 100%;        
+                
+            }
+            .border .content .box .Previous table thead th{
+                position: sticky;
+                top: 0;
+            }
+        </style>
+        <div class = "navbar">
+            <div class = "Producer">
+                <a href="/Producer" >Producer</a> 
+            </div>
+            <div class = "Listener">
+                <a href="/Listener" >Listener</a>
+            </div>
+            <div class = "Dj">
+                <a href="/">Dj</a>
+            </div>
+            <h1> DJ Timeslot </h1>
+            <div class = "DjBack">
+                <a href="/">Back To DJ Menu</a>
+            </div>
+        </div>
+    </head>
+    <body>
+        <div class="border"> 
+            <div class = "content">
+                <h1 id="head"> 3:00pm October 1st,2023</h1>
+                <div class="boxHeadings">
+                    <div class="AsHead">
+                        <h1>Assigned PlayList</h1>
+                        <label for="searchSongs" style="font-size: 30px;"> search for songs:</label>
+                        <input type="text" id="searchSongs">
+                    </div>
+                    <div class="PrHead">
+                        <h1>Previous PlayList</h1>
+                        <label for="searchPlaylist" style="font-size: 30px;"> search for playlist:</label>
+                        <input type="text" id="searchPlaylist">
+                    </div>
+                </div>
+                <div class="box">
+                    <div class = "Assigned">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Song Name</th>
+                                    <th>Description</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Song</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="Previous">
+                        <table>    
+                            <thead>
+                                <tr>
+                                    <th>PlayList Name</th>
+                                    <th>Description</th>
+                                    <th>Go To Playlist</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td> descriptionnnnnnnnnnnnnnnnnnnnnn</td>
+                                    <td> Edit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
