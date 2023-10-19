@@ -222,7 +222,7 @@
                         <th style="border:none;"></th>
                     </tr>
                     <tr>
-                        <td style="border:none;font-size: 50px;"><button id="arrowl"> &#8592 </button></td>
+                        <td style="border:none;font-size: 50px;"><button id="arrowl" onclick="leftW()"> &#8592 </button></td>
                         <td><button id="day1"> October 1st 2023</button></td>
                         <td><button id="day2"> October 2nd 2023</button></td>
                         <td><button id="day3"> October 3rd 2023</button></td>
@@ -230,7 +230,7 @@
                         <td><button id="day5"> October 5th 2023</button></td>
                         <td><button id="day6"> October 6th 2023</button></td>
                         <td><button id="day7"> October 7th 2023</button></td>
-                        <td style="border:none; font-size: 50px;"> <button id="arrowr"> &#8594 </button></td>
+                        <td style="border:none; font-size: 50px;"> <button id="arrowr" onclick="rightW()"> &#8594 </button></td>
                     </tr>
                 </table>
                 <h1>Select Time Slot</h1>
@@ -341,10 +341,10 @@
             let day6Val = Object.values(week[5]);
             let day7Val = Object.values(week[6]);
             //add changeable weeks
-            let leftArrow = document.getElementById("arrowl");
-            leftArrow.addEventListener("click",leftW);
-            let rightArrow = document.getElementById("arrowr");
-            rightArrow.addEventListener("click",rightW);
+            //let leftArrow = document.getElementById("arrowl");
+            //leftArrow.addEventListener("click",leftW);
+            //let rightArrow = document.getElementById("arrowr");
+           // rightArrow.addEventListener("click",rightW);
             let d = document.getElementById("day1");
             d.addEventListener("click",dayHandler);
             let d2 = document.getElementById("day2");

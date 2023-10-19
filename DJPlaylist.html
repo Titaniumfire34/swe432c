@@ -316,7 +316,7 @@
 
             function addALLSongsPlaylist2() { //---------------------------------------------------------------------------------------------------------------------------------------------------
                 let tb = document.getElementById("assignTB");
-                while(tb.firstElementChild) {
+                while(tb.firstElementChild != null) {
                     let child = tb.firstElementChild;
                     tb.removeChild(child);
                 }
