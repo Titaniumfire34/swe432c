@@ -34,6 +34,18 @@
                 border-right: 2px solid #a9a9a9;
                 width: 400px;
             }
+            .border .content .boxHeadings .PrHead .reset{
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+            }
+            .border .content .boxHeadings .AsHead .reset{
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+            }
 
             .border .content .box{
                 background-color: #202122;
@@ -143,7 +155,7 @@
                 <a href="/Listener" >Listener</a>
             </div>
             <div class = "Dj">
-                <a href="/">DJ</a>
+                <a href="./DJHomepage.html">DJ</a>
             </div>
             <h1>DJ PlayList Edit</h1>
         </nav>
@@ -152,16 +164,18 @@
         <div class="border"> 
             <main class = "content">
                 <header class="boxHeadings">
-                    <div class="AsHead">
+                    <form class="AsHead">
                         <h1>Assigned PlayList</h1>
-                        <label for="searchSongs" style="font-size: 30px;"> search for songs:</label>
-                        <input type="text" id="searchSongs">
-                    </div>
-                    <div class="PrHead">
+                        <label for="searchSongs" style="font-size: 30px;"> Search for songs:</label>
+                        <input type="text" id="searchPlaylistA" name="inputbox" value="">
+                        <input type="button" id="searchButton" style="width: 75px;"name="button" value="Search" onclick="searchSongA(this.form)">
+                    </form>
+                    <form class="PrHead">
                         <h1>Previous PlayList</h1>
-                        <label for="searchPlaylist" style="font-size: 30px;"> search for playlist:</label>
-                        <input type="text" id="searchPlaylist">
-                    </div>
+                        <label for="searchPlaylist" style="font-size: 30px;"> Search for songs:</label>
+                        <input type="text" id="searchPlaylistP" name="inputbox" value="">
+                        <input type="button" id="searchButton" style="width: 75px;"name="button" value="Search" onclick="searchSongP(this.form)">
+                    </form>
                 </header>
                 <section class="box">
                     <article class = "Assigned">
@@ -170,221 +184,10 @@
                                 <tr>
                                     <th style="width: 25%">Song Name</th>
                                     <th>Description</th>
-                                    <th style="width: 10%">Options</th>
+                                    <th style="width: 10%">Delete Song</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option </td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
-                                <tr>
-                                    <td> Song</td>
-                                    <td> description</td>
-                                    <td> option</td>
-                                </tr>
+                            <tbody id="assignTB">
                             </tbody>
                         </table>
                     </article>
@@ -397,76 +200,271 @@
                                     <th style="width: 10%">Add songs</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
-                                <tr>
-                                    <td> Name</td>
-                                    <td> description</td>
-                                    <td> Add</td>
-                                </tr>
+                            <tbody id="prevTB">
                             </tbody>
                         </table>
                     </article>
                 </section>
                 <footer class="Buttons">
-                    <button>Back</button>
-                    <button>Save</button>
+                    <button onclick="backPage()">Back</button>
+                    <button onclick="alert('PlayList Saved')">Save</button>
                 </footer>
             </main>
         </div>
+        <script>
+            
+            let asPlaylist = [
+            {
+                Song: "WOW SONG",
+                description: "wow that a song",
+            },
+            {
+                Song: "thats crazy",
+                description: "coco",
+            },
+            {
+                Song: "lofi1",
+                description: "lofi song",
+            },
+            {
+                Song: "WOW SONG2",
+                description: "wow that a song2",
+            },
+            {
+                Song: "like that",
+                description: "by josh smith and genre: pop",
+            },
+            {
+                Song: "sunset lover",
+                description: "by biscuit and great for sunsets",
+            }]
+
+            let prevPlaylist = [
+            {
+                Song: "lost within",
+                description: "footbal yay",
+            },
+            {
+                Song: "blue boi",
+                description: "futball ayy",
+            },
+            {
+                Song: "lofi1",
+                description: "lofi song",
+            },
+            {
+                Song: "lofi2",
+                description: "lofi song",
+            },
+            {
+                Song: "lofi3",
+                description: "lofi song",
+            },
+            {
+                Song: "lofi4",
+                description: "lofi song",
+            },
+            {
+                Song: "WOW SONG25",
+                description: "wow that a song too many",
+            },
+            {
+                Song: "in my dreams",
+                description: "by george washingtion",
+            },
+            {
+                Song: "lover of sunsets",
+                description: "sun falling down",
+            }]
+            let url = new URLSearchParams(window.location.search);
+            
+            addALLSongsPlaylist();
+            addALLSongsPlaylist2();
+            
+            function addALLSongsPlaylist() { //---------------------------------------------------------------------------------------------------------------------------------------------------
+                let tb = document.getElementById("prevTB");
+                while(tb.firstElementChild) {
+                    let child = tb.firstElementChild;
+                    tb.removeChild(child);
+                }
+                let i = 0;
+                for(let song of prevPlaylist) {
+                    let songS = Object.values(song);
+                    let row = document.createElement("tr");
+                    i++;
+                    let id = '';
+                    id +=i;
+                    row.setAttribute('id', id);
+                    row.setAttribute('class','row')
+                    let td1 = document.createElement("td");
+                    let td2 = document.createElement("td");
+                    let td3 = document.createElement("td");
+                    td1.innerHTML = songS[0];
+                    td2.innerHTML = songS[1];
+                    let add = document.createElement('BUTTON');
+                    add.setAttribute('id', 'add');   
+                    add.style.border = "none";
+                    add.innerHTML = "Add";
+                    add.addEventListener("click",addRow);
+                    td3.appendChild(add);
+                    row.appendChild(td1);
+                    row.appendChild(td2);
+                    row.appendChild(td3);
+                    tb.appendChild(row);             
+                }
+            }
+
+            function addALLSongsPlaylist2() { //---------------------------------------------------------------------------------------------------------------------------------------------------
+                let tb = document.getElementById("assignTB");
+                while(tb.firstElementChild) {
+                    let child = tb.firstElementChild;
+                    tb.removeChild(child);
+                }
+                let i = 0;
+                for(let song of asPlaylist) {
+                    let songS = Object.values(song);
+                    let row = document.createElement("tr");
+                    i++;
+                    let id = '';
+                    id +=i;
+                    row.setAttribute('id', id);
+                    row.setAttribute('class','row')
+                    // Create cells
+                    let td1 = document.createElement("td");
+                    let td2 = document.createElement("td");
+                    let td3 = document.createElement("td");
+                    td1.innerHTML = songS[0];
+                    td2.innerHTML = songS[1];
+                    let deleteP = document.createElement('BUTTON');
+                    deleteP.setAttribute('id', 'delete');   
+                    deleteP.style.border = "none";
+                    deleteP.innerHTML = "Delete";
+                    deleteP.addEventListener("click",deleteRow);
+                    td3.appendChild(deleteP);
+                    row.appendChild(td1);
+                    row.appendChild(td2);
+                    row.appendChild(td3);
+                    tb.appendChild(row);             
+                }
+            }
+
+            function deleteRow() {
+                let rowId = event.target.parentNode.parentNode.id;  
+                let rownum = parseInt(rowId);
+                rownum--;
+                console.log(rownum);
+                asPlaylist.splice(rownum,1);
+                console.log("yo");
+                addALLSongsPlaylist2();
+            }
+            function addRow() {
+                let rowId = event.target.parentNode.parentNode.id;  
+                let rownum = parseInt(rowId);
+                rownum--;
+                console.log(rownum);
+                asPlaylist.push(prevPlaylist[rownum]);
+                addALLSongsPlaylist2();
+                console.log("here");
+            }
+            
+            function searchSongA(form) {
+                var inputValue = form.inputbox.value;
+                if(inputValue == "") {
+                    addALLSongsPlaylist2();
+                }
+                else {
+                    let tb = document.getElementById("assignTB");
+                    while(tb.firstElementChild) {
+                        let child = tb.firstElementChild;
+                        tb.removeChild(child);
+                    }
+                    let i = 0;
+                    for(let song of asPlaylist) {
+                        let songSeached = Object.values(song);
+                        console.log(inputValue + " = " + songSeached[0]);
+                        if(songSeached[0].includes(inputValue) == true) {
+                            console.log("True");
+                            let row = document.createElement("tr");
+                            i++;
+                            let id = '';
+                            id +=i;
+                            console.log("1");
+                            row.setAttribute('id', id);
+                            row.setAttribute('class','row');
+                            console.log("2");
+                            let td1 = document.createElement("td");
+                            let td2 = document.createElement("td");
+                            let td3 = document.createElement("td");
+                            console.log("3");
+                            td1.innerHTML = songSeached[0];
+                            td2.innerHTML = songSeached[1];
+                            let edit = document.createElement('BUTTON');
+                            edit.setAttribute('id', 'edit');   
+                            edit.style.border = "none";
+                            edit.innerHTML = "Edit";
+                            edit.addEventListener("click",deleteRow);
+                            td3.appendChild(edit);
+                            row.appendChild(td1);
+                            row.appendChild(td2);
+                            row.appendChild(td3);
+                            tb.appendChild(row);
+                            console.log("4");
+                        }             
+                    }
+                }
+            }
+
+            function searchSongP(form) {
+                var inputValue = form.inputbox.value;
+                if(inputValue == "") {
+                    addALLSongsPlaylist();
+                }
+                else {
+                    let tb = document.getElementById("prevTB");
+                    while(tb.firstElementChild) {
+                        let child = tb.firstElementChild;
+                        tb.removeChild(child);
+                    }
+                    let i = 0;
+                    for(let song of prevPlaylist) {
+                        let songSeached = Object.values(song);
+                        console.log(inputValue + " = " + songSeached[0]);
+                        if(songSeached[0].includes(inputValue) == true) {
+                            console.log("True");
+                            let row = document.createElement("tr");
+                            i++;
+                            let id = '';
+                            id +=i;
+                            console.log("1");
+                            row.setAttribute('id', id);
+                            row.setAttribute('class','row');
+                            console.log("2");
+
+                            let td1 = document.createElement("td");
+                            let td2 = document.createElement("td");
+                            let td3 = document.createElement("td");
+                            console.log("3");
+                            td1.innerHTML = songSeached[0];
+                            td2.innerHTML = songSeached[1];
+                            let edit = document.createElement('BUTTON');
+                            edit.setAttribute('id', 'edit');   
+                            edit.style.border = "none";
+                            edit.innerHTML = "Edit";
+                            edit.addEventListener("click",addRow);
+                            td3.appendChild(edit);
+                            row.appendChild(td1);
+                            row.appendChild(td2);
+                            row.appendChild(td3);
+                            tb.appendChild(row);
+                            console.log("4");
+                        }             
+                    }
+                }
+            }
+            function backPage() {
+                let ref = 'DJTimeSlot.html?' + url;
+                window.location.href=ref;
+            }
+    </script>
     </body>
 </html>

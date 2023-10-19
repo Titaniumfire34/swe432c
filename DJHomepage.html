@@ -47,7 +47,7 @@
                 margin-bottom: 40px;
                 text-align: center;
             }
-            .border .content #Week td button{
+            .border .content #Week td #arrowr{
                 padding: 10px; 
                 border: solid;
                 display: inline; 
@@ -55,6 +55,71 @@
                 margin-right: 40px;
                 margin-left: 40px;
                 margin-bottom: 50px;
+            }
+            .border .content #Week td #arrowl{
+                padding: 10px; 
+                border: solid;
+                display: inline; 
+                background-color: #202122;
+                margin-right: 40px;
+                margin-left: 40px;
+                margin-bottom: 50px;
+            }
+            .border .content #Week tr td #day1{
+                padding: 5px; 
+                border: none;
+                background-color: #202122;
+                margin-right: 1px;
+                margin-left: 1px;
+                font-size: 24px;
+            }
+            .border .content #Week tr td #day2{
+                padding: 5px; 
+                border: none;
+                background-color: #202122;
+                margin-right: 1px;
+                margin-left: 1px;
+                font-size: 24px;
+            }
+            .border .content #Week tr td #day3{
+                padding: 5px; 
+                border: none;
+                background-color: #202122;
+                margin-right: 1px;
+                margin-left: 1px;
+                font-size: 24px;
+            }
+            .border .content #Week tr td #day4{
+                padding: 5px; 
+                border: none;
+                background-color: #202122;
+                margin-right: 1px;
+                margin-left: 1px;
+                font-size: 24px;
+            }
+            .border .content #Week tr td #day5{
+                padding: 5px; 
+                border: none;
+                background-color: #202122;
+                margin-right: 1px;
+                margin-left: 1px;
+                font-size: 24px;
+            }
+            .border .content #Week tr td #day6{
+                padding: 5px; 
+                border: none;
+                background-color: #202122;
+                margin-right: 1px;
+                margin-left: 1px;
+                font-size: 24px;
+            }
+            .border .content #Week tr td #day7{
+                padding: 5px; 
+                border: none;
+                background-color: #202122;
+                margin-right: 1px;
+                margin-left: 1px;
+                font-size: 24px;
             }
             .border .content h1 {
                 padding: 10px;  
@@ -135,20 +200,14 @@
                 <a href="/Listener" >Listener</a>
             </div>
             <div class = "Dj">
-                <a href="/">DJ</a>
+                <a href="./DJHomepage.html">DJ</a>
             </div>
             <h1> DJ Home </h1>
         </nav>
     </head>
     <body>
         <div class="border"> 
-            <main class = "content"> 
-                <dialog open> 
-                    <p style="background-color: #470202; color: #a9a9a9;">October 1st Selected</p>
-                    <form style="background-color: #470202;" method="dialog">
-                        <button style="background-color: #470202;color: #a9a9a9; border-color: #a9a9a9; margin-top: 10px; width: 50px;">OK</button>
-                    </form>
-                </dialog>
+            <main class = "content">
                 <table id="Week">
                     <caption>Select Day of the week</caption>
                     <tr>
@@ -163,45 +222,310 @@
                         <th style="border:none;"></th>
                     </tr>
                     <tr>
-                        <td style="border:none;font-size: 50px;"><button id="button"> &#8592<i class="arrow left"></i> </button></td>
-                        <td>October 1st<br> 2023</td>
-                        <td>October 2nd<br> 2023</td>
-                        <td>October 3rd<br> 2023</td>
-                        <td>October 4th<br> 2023</td>
-                        <td>October 5th<br> 2023</td>
-                        <td>October 6th<br> 2023</td>
-                        <td>October 7th<br> 2023</td>
-                        <td style="border:none; font-size: 50px;"> <button> &#8594<i class="arrow right"></i> </button></td>
+                        <td style="border:none;font-size: 50px;"><button id="arrowl"> &#8592 </button></td>
+                        <td><button id="day1"> October 1st 2023</button></td>
+                        <td><button id="day2"> October 2nd 2023</button></td>
+                        <td><button id="day3"> October 3rd 2023</button></td>
+                        <td><button id="day4"> October 4th 2023</button></td>
+                        <td><button id="day5"> October 5th 2023</button></td>
+                        <td><button id="day6"> October 6th 2023</button></td>
+                        <td><button id="day7"> October 7th 2023</button></td>
+                        <td style="border:none; font-size: 50px;"> <button id="arrowr"> &#8594 </button></td>
                     </tr>
                 </table>
                 <h1>Select Time Slot</h1>
                 <hr>
                 <p id="timezone">TimeZone: U.S Eastern</p> 
-                <p id="date">Date: Oct 1st, 2023</p>
+                <p id="date">Date: None </p>
                 <br>
                 <section id="Timeslots">
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
-                    <button id="timeslot"> 3:00pm</button>
                 </section>            
             </main>
         </div>
+        <script>
+            let week = [
+                {
+                    Date: "October 1st 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm"]
+                },
+                {
+                    Date: "October 2nd 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm"]
+                },
+                {
+                    Date: "October 3rd 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm","7:00pm","9:00pm","10:00pm"]
+                },
+                {
+                    Date: "October 4th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","3:00pm"]
+                },
+                {
+                    Date: "October 5th 2023", 
+                    timeslots: ["12:00pm"]
+                },
+                {
+                    Date: "October 6th 2023", 
+                    timeslots: ["2:30pm","3:00pm"]
+                },
+                {
+                    Date: "October 7th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","11:30am","12:00pm","12:30pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm","11:30pm"]
+                },
+            ]
+            let leftWeek = [
+                {
+                    Date: "September 24th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm"]
+                },
+                {
+                    Date: "September 25th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm"]
+                },
+                {
+                    Date: "September 26th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","11:30am","12:00pm","12:30pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm","11:30pm"]
+                },
+                {
+                    Date: "September 27th 2023", 
+                    timeslots: ["2:30pm","3:00pm"]
+                },
+                {
+                    Date: "September 28th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm","7:00pm","9:00pm","10:00pm"]
+                },
+                {
+                    Date: "September 29th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm"]
+                },
+                {
+                    Date: "September 30th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","1:30pm","2:00pm","2:30pm","3:00pm"]
+                },
+            ]
+            let rightWeek = [
+                {
+                    Date: "October 8th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm"]
+                },
+                {
+                    Date: "October 9th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm","7:00pm","9:00pm","10:00pm"]
+                },
+                {
+                    Date: "October 10th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","1:30pm","2:00pm","2:30pm","3:00pm"]
+                },
+                {
+                    Date: "October 11th 2023", 
+                    timeslots: ["2:30pm","3:00pm"]
+                },
+                {
+                    Date: "October 12th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","11:30am","12:00pm","12:30pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm","11:30pm"]
+                },
+                {
+                    Date: "October 13th 2023", 
+                    timeslots: ["12:00pm"]
+                },
+                {
+                    Date: "October 14th 2023", 
+                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm"]
+                },
+            ]
+            let dayVal = Object.values(week[0]);
+            let day2Val = Object.values(week[1]);
+            let day3Val = Object.values(week[2]);
+            let day4Val = Object.values(week[3]);
+            let day5Val = Object.values(week[4]);
+            let day6Val = Object.values(week[5]);
+            let day7Val = Object.values(week[6]);
+            //add changeable weeks
+            let leftArrow = document.getElementById("arrowl");
+            leftArrow.addEventListener("click",leftW);
+            let rightArrow = document.getElementById("arrowr");
+            rightArrow.addEventListener("click",rightW);
+            let d = document.getElementById("day1");
+            d.addEventListener("click",dayHandler);
+            let d2 = document.getElementById("day2");
+            d2.addEventListener("click",day2Handler);
+            let d3 = document.getElementById("day3");
+            d3.addEventListener("click",day3Handler);       
+            let d4 = document.getElementById("day4");
+            d4.addEventListener("click",day4Handler);
+            let d5 = document.getElementById("day5");
+            d5.addEventListener("click",day5Handler);
+            let d6 = document.getElementById("day6");
+            d6.addEventListener("click",day6Handler);
+            let d7 = document.getElementById("day7");
+            d7.addEventListener("click",day7Handler);
+            
+            function leftW() {
+                dayVal = Object.values(leftWeek[0]); 
+                d.innerHTML = dayVal[0];    
+                day2Val = Object.values(leftWeek[1]);
+                d2.innerHTML = day2Val[0]; 
+                day3Val = Object.values(leftWeek[2]);
+                d3.innerHTML = day3Val[0];
+                day4Val = Object.values(leftWeek[3]);
+                d4.innerHTML = day4Val[0];
+                day5Val = Object.values(leftWeek[4]);
+                d5.innerHTML = day5Val[0];
+                day6Val = Object.values(leftWeek[5]);
+                d6.innerHTML = day6Val[0];
+                day7Val = Object.values(leftWeek[6]);
+                d7.innerHTML = day7Val[0];
+            }
+
+            function rightW() {
+                dayVal = Object.values(rightWeek[0]);
+                d.innerHTML = dayVal[0];
+                day2Val = Object.values(rightWeek[1]);
+                d2.innerHTML = day2Val[0]; 
+                day3Val = Object.values(rightWeek[2]);
+                d3.innerHTML = day3Val[0];
+                day4Val = Object.values(rightWeek[3]);
+                d4.innerHTML = day4Val[0];
+                day5Val = Object.values(rightWeek[4]);
+                d5.innerHTML = day5Val[0];
+                day6Val = Object.values(rightWeek[5]);
+                d6.innerHTML = day6Val[0];
+                day7Val = Object.values(rightWeek[6]);
+                d7.innerHTML = day7Val[0];
+            }
+            function dayHandler() {
+                let section = document.getElementById("Timeslots");
+                document.getElementById("date").innerHTML = "Date: " + dayVal[0];
+                while(section.firstElementChild) {
+                    let child = section.firstElementChild;
+                    section.removeChild(child);
+                }
+                for(let times of dayVal[1]) {
+                    let timeSlot = document.createElement('BUTTON');
+                    timeSlot.setAttribute('id', 'timeslot');
+                    let time = document.createTextNode(times);
+                    timeSlot.appendChild(time);
+                    section.appendChild(timeSlot);
+                }
+                let timeButtons = document.querySelectorAll('#timeslot');
+                timeButtons.forEach(addListen)
+            }
+
+            function day2Handler() {
+                let section = document.getElementById("Timeslots");
+                document.getElementById("date").innerHTML = "Date: " + day2Val[0];
+                while(section.firstElementChild) {
+                    let child = section.firstElementChild;
+                    section.removeChild(child);
+                }
+                for(let times of day2Val[1]) {
+                    let timeSlot = document.createElement('BUTTON');
+                    timeSlot.setAttribute('id', 'timeslot');
+                    let time = document.createTextNode(times);
+                    timeSlot.appendChild(time);
+                    section.appendChild(timeSlot);
+                }
+                let timeButtons = document.querySelectorAll('#timeslot');
+                timeButtons.forEach(addListen)
+            }
+
+            function day3Handler() {
+                let section = document.getElementById("Timeslots");
+                document.getElementById("date").innerHTML = "Date: " + day3Val[0];
+                while(section.firstElementChild) {
+                    let child = section.firstElementChild;
+                    section.removeChild(child);
+                }
+                for(let times of day3Val[1]) {
+                    let timeSlot = document.createElement('BUTTON');
+                    timeSlot.setAttribute('id', 'timeslot');
+                    let time = document.createTextNode(times);
+                    timeSlot.appendChild(time);
+                    section.appendChild(timeSlot);
+                }
+                let timeButtons = document.querySelectorAll('#timeslot');
+                timeButtons.forEach(addListen)
+            }
+            function day4Handler() {
+                let section = document.getElementById("Timeslots");
+                document.getElementById("date").innerHTML = "Date: " + day4Val[0];
+                while(section.firstElementChild) {
+                    let child = section.firstElementChild;
+                    section.removeChild(child);
+                }
+                for(let times of day4Val[1]) {
+                    let timeSlot = document.createElement('BUTTON');
+                    timeSlot.setAttribute('id', 'timeslot');
+                    let time = document.createTextNode(times);
+                    timeSlot.appendChild(time);
+                    section.appendChild(timeSlot);
+                }
+                let timeButtons = document.querySelectorAll('#timeslot');
+                timeButtons.forEach(addListen)
+            }
+            function day5Handler() {
+                let section = document.getElementById("Timeslots");
+                document.getElementById("date").innerHTML = "Date: " + day5Val[0];
+                while(section.firstElementChild) {
+                    let child = section.firstElementChild;
+                    section.removeChild(child);
+                }
+                for(let times of day5Val[1]) {
+                    let timeSlot = document.createElement('BUTTON');
+                    timeSlot.setAttribute('id', 'timeslot');
+                    let time = document.createTextNode(times);
+                    timeSlot.appendChild(time);
+                    section.appendChild(timeSlot);
+                }
+                let timeButtons = document.querySelectorAll('#timeslot');
+                timeButtons.forEach(addListen)
+            }
+            function day6Handler() {
+                let section = document.getElementById("Timeslots");
+                document.getElementById("date").innerHTML = "Date: " + day6Val[0];
+                while(section.firstElementChild) {
+                    let child = section.firstElementChild;
+                    section.removeChild(child);
+                }
+                for(let times of day6Val[1]) {
+                    let timeSlot = document.createElement('BUTTON');
+                    timeSlot.setAttribute('id', 'timeslot');
+                    let time = document.createTextNode(times);
+                    timeSlot.appendChild(time);
+                    section.appendChild(timeSlot);
+                }
+                let timeButtons = document.querySelectorAll('#timeslot');
+                timeButtons.forEach(addListen)
+            }
+            function day7Handler() {
+                let section = document.getElementById("Timeslots");
+                document.getElementById("date").innerHTML = "Date: " + day7Val[0];
+                while(section.firstElementChild) {
+                    let child = section.firstElementChild;
+                    section.removeChild(child);
+                }
+                for(let times of day7Val[1]) {
+                    let timeSlot = document.createElement('BUTTON');
+                    timeSlot.setAttribute('id', 'timeslot');
+                    let time = document.createTextNode(times);
+                    timeSlot.appendChild(time);
+                    section.appendChild(timeSlot);
+                }
+                let timeButtons = document.querySelectorAll('#timeslot');
+                timeButtons.forEach(addListen)
+            }
+            function addListen(time) {
+                let timeS = time.innerHTML;
+                time.addEventListener("click",() => pageNext(timeS))
+            }
+            function pageNext(times) {
+                let ref = 'DJTimeSlot.html?timeslot=';
+                let da = '?date=';
+                da+= document.getElementById("date").innerHTML;
+                ref +=times;
+                ref+=da;
+                window.location.href=ref;
+            }
+            </script>
     </body>
 </html>
