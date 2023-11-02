@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <htm lang="en">
     <head>
-        <link rel="stylesheet" href="DJStyle.css">
+        <link rel="stylesheet" href="css/DJStyle.css">
         <title>DJHome</title>
         <style>
             .border .content #Week{
@@ -192,18 +192,7 @@
                 width: 150px;
             }
         </style>
-        <nav class = "navbar">
-            <div class = "Producer">
-                <a href="/Producer" >Producer</a> 
-            </div>
-            <div class = "Listener">
-                <a href="/Listener" >Listener</a>
-            </div>
-            <div class = "Dj">
-                <a href="./DJHomepage.html">DJ</a>
-            </div>
-            <h1> DJ Home </h1>
-        </nav>
+        <%- include('../partials/NavbarDjHome'); %>
     </head>
     <body>
         <div class="border"> 
@@ -518,13 +507,13 @@
                 let timeS = time.innerHTML;
                 time.addEventListener("click",() => pageNext(timeS))
             }
-            function pageNext(times) {
-                let ref = 'DJTimeSlot.html?timeslot=';
+            function pageNext(times) {  
+                let ref = 'DJTimeSlot?timeslot=';
                 let da = '?date=';
                 da+= document.getElementById("date").innerHTML;
                 ref +=times;
                 ref+=da;
-                window.location.href=ref;
+                window.location.href=ref;   
             }
             </script>
     </body>

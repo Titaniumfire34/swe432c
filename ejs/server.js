@@ -4,7 +4,7 @@ const express = require('express');
 
 // create an express app
 const app = express();
-
+app.set('view engine','ejs');
 // tell node to use json and HTTP header features in body-parser
 app.use(express.json());
 
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.static(__dirname+'/public'));
 
 app.get('/DJStyle.css', function(req, res) {
-  res.sendFile(__dirname + "/" + "DJStyle.css");
+  res.sendFile(__dirname + "/pages/DJStyle.css");
 });
 
 
@@ -22,19 +22,44 @@ app.get('/DJStyle.css', function(req, res) {
 
 //home tab
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/DJHomepage.html'));
+  res.render('pages/DJHomepage');
+});
+
+
+//timeslot tab
+app.get('/DJTimeSlot', function(req, res) {
+  let playlists = [
+    {
+        Name: "Playlist christmas",
+        description: "jolly jolly christmas",
+    },
+    {
+        Name: "Playlist halloween",
+        description: "scary",
+    },
+    {
+        Name: "lofi playlist",
+        description: "lofi songs",
+    },
+    {
+        Name: "Playlist 1st",
+        description: "first try",
+    },
+    {
+        Name: "new year playlist",
+        description: "to start off the year",
+    },
+    {
+        Name: "summer playlist",
+        description: "summer relaxer",
+    }]
+  res.render('pages/DJTimeSlot', {playlists: playlists});
 });
 
 //playlist tab
-app.get('/DJPlaylist.html', function(req, res) {
-  res.sendFile(path.join(__dirname, '/DJPlaylist.html'));
+app.get('/DJPlaylist', function(req, res) {
+  res.render('pages/DJPlaylist');
 });
-
-//timeslot tab
-app.get('/DJTimeSlot.html', function(req, res) {
-  res.sendFile(path.join(__dirname, '/DJTimeSlot.html'));
-});
- 
 // Use express to listen to port
 let port = 8080;
 app.listen(port, () => {

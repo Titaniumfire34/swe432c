@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="DJStyle.css">
+        <link rel="stylesheet" href="css/DJStyle.css">
         <title>DJTimeSlot</title>
         <style>
             .navbar .DjBack {
@@ -135,11 +135,16 @@
                 padding: 20px;
                 margin-left: -5%;
             }
-            .border .content .box .Previous #prevList p {
-                margin-left: 10%;
+            .border .content .box .Previous #prevList #desc {
+                margin-left: 5%;
+                width: 490px;
+            }
+            .border .content .box .Previous #prevList #Name {
+                margin-left: 5%;
+                width: 200px;
             }
             .border .content .box .Previous #prevList button {
-                margin-left: 42%;
+                margin-right: 10%;
                 padding: 10px;
                 border-bottom: 2px solid #a9a9a9;
                 border-left: 2px solid #a9a9a9;
@@ -203,21 +208,7 @@
                 background-color: #a9a9a9;
             }
         </style>
-        <nav class = "navbar">
-            <div class = "Producer">
-                <a href="/Producer" >Producer</a> 
-            </div>
-            <div class = "Listener">
-                <a href="/Listener" >Listener</a>
-            </div>
-            <div class = "Dj">
-                <a href="./DJHomepage.html">DJ</a>
-            </div>
-            <h1> DJ Timeslot </h1>
-            <div class = "DjBack">
-                <a href="./DJHomepage.html">Back To DJ Menu</a>
-            </div>
-        </nav>
+        <%- include('../partials/NavbarDjTime'); %>
     </head>
     <body>
         <div class="border"> 
@@ -265,7 +256,13 @@
                     <article class="Previous">
                         <div class="listHead"><h1 id="name" style="display: inline-block;">PlayList Name</h1><h1 id="Description" style="display: inline-block;"> Description</h1><h1 id="button" style="display: inline-block;margin-left: 40%;"> Option</h1></div>
                         <ul id="prevList" style="list-style-type: none;">
-                            
+                            <% playlists.forEach(function(playlist) { %>
+                            <li>
+                                <p id="Name" style="display:inline-block"><%=playlist.Name %></p>
+                                <p id="desc" style="display:inline-block"><%=playlist.description %></p>
+                                <button id="option" onclick="pageNext2()">Option</button>
+                            </li>
+                            <% }); %>
                         </ul>
                     </article>
                 </section>
@@ -297,6 +294,9 @@
                 song: "sunset lover",
                 description: "by biscuit and great for sunsets",
             }]
+
+            let prevPlaylists = [];
+
             let url = new URLSearchParams(window.location.search);
             let time = "";
             let editedRow = 0;
@@ -320,45 +320,54 @@
                 let header = document.getElementById("head");
                 header.innerHTML = date + " Time: " + timeslot;
                 time = timeslot;
-                addALLprevPlaylist(time);
+                getALLPlaylist();
                 addALLSongsPlaylist();
             } 
+            function getALLPlaylist() {
+                let list = document.querySelectorAll('li');
+                for(let playlist of list) {    
+                    let Name = playlist.querySelector("#Name");
+                    let desc = playlist.querySelector("#desc");
+                    let play = {
+                        Name: "",
+                        description: "",
+                    }
+                    play.Name = Name.innerHTML;
+                    play.description = desc.innerHTML;
+                    prevPlaylists.push(play);
+                }
+            }
 
-            function addALLprevPlaylist(timeslot) {
-                let randomTime = timeslot.split(":");
-                let r = parseInt(randomTime[0]);
-                r+=1;
-                r *=2;
+            function addALLprevPlaylist() {
                 let list = document.getElementById("prevList");
                 while(list.firstElementChild) {
                     let child = list.firstElementChild;
                     list.removeChild(child);
                 }
-                for(let i = 0; i < r;i++) {
+                for(let plays of prevPlaylists) {
+                    let prevPlaylist = Object.values(plays); 
                     let play = document.createElement('li');
                     let Name = document.createElement('p');
                     Name.setAttribute('id', 'Name');  
-                    Name.style.display = "inline-block";
-                    let nameText = document.createTextNode("Playlist " + i);
-                    Name.appendChild(nameText);
+                    Name.style.display = "inline-block";          
+                    Name.innerHTML = prevPlaylist[0];                
                     play.appendChild(Name);
                     list.appendChild(play);
                     let desc = document.createElement('p');
                     desc.setAttribute('id', 'desc');   
                     desc.style.display = "inline-block";
-                    let description = document.createTextNode("Playlist " + i  + " description");
-                    desc.appendChild(description);
+                    desc.innerHTML = prevPlaylist[1];         
                     play.appendChild(desc);
                     list.appendChild(play);
                     let optionB = document.createElement('BUTTON');
-                    optionB.setAttribute('id', 'option');   
-                    let buText = document.createTextNode("Option");
+                    optionB.setAttribute('id', 'option');              
+                    let buText = document.createTextNode("Option");       
                     optionB.appendChild(buText);
                     play.appendChild(optionB);
                     list.appendChild(play);
                 }
                 let timeButtons = document.querySelectorAll('#option');
-                timeButtons.forEach(addListeners);
+                timeButtons.forEach(addListeners);           
             } 
 
             function addALLSongsPlaylist() { //---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -398,7 +407,7 @@
                 option.addEventListener("click",pageNext2);
             }
             function pageNext2() {
-                let ref = 'DJPlaylist.html?' + url;
+                let ref = 'DJPlaylist?' + url;
                 window.location.href=ref;
             }
             function editRow(index) {
@@ -413,8 +422,10 @@
                 let dialog = document.getElementById("editpopup");
                 let songInput = document.getElementById("songNamein");
                 let descInput = document.getElementById("songDescription"); 
-                songInput.setAttribute("value",songNameEdit);   
+                songInput.setAttribute("value",songNameEdit);
+                songInput.value = songNameEdit;   
                 descInput.setAttribute("value",descEdit);
+                descInput.value = descEdit;
                 dialog.show();        
             }
             function makeChange(form) {
@@ -431,7 +442,7 @@
             function searchPrev(form) {
                 var inputValue = form.inputbox.value;
                 if(inputValue == '' || inputValue == null) {
-                    addALLprevPlaylist(time);
+                    addALLprevPlaylist();
                 }
                 else {
                     let i = 0;

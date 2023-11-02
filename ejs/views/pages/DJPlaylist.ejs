@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="DJStyle.css">
+        <link rel="stylesheet" href="css/DJStyle.css">
         <title>DJPlaylist</title>
         <style>
             .border .content .boxHeadings{
@@ -146,19 +146,30 @@
                 margin-left: 4%;
                 margin-right: 30%;
             }
+
+            .border .content .Buttons #Save{
+                padding: 10px; 
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9;
+                display: inline; 
+                background-color: #202122;
+                margin-top: 1%;
+                margin-left: 4%;
+                margin-right: 30%;
+            }
+            .border .content .Buttons #Save #SaveButton{
+                padding: 10px; 
+                display: inline; 
+                background-color: #202122;
+                margin-top: 1%;
+                margin-left: 4%;
+                margin-right: 30%;
+            }
         </style>
-        <nav class = "navbar">
-            <div class = "Producer">
-                <a href="/Producer" >Producer</a> 
-            </div>
-            <div class = "Listener">
-                <a href="/Listener" >Listener</a>
-            </div>
-            <div class = "Dj">
-                <a href="./DJHomepage.html">DJ</a>
-            </div>
-            <h1>DJ PlayList Edit</h1>
-        </nav>
+        <%- include('../partials/NavbarDjplay'); %>
+        
     </head>
     <body>
         <div class="border"> 
@@ -207,7 +218,7 @@
                 </section>
                 <footer class="Buttons">
                     <button onclick="backPage()">Back</button>
-                    <button onclick="alert('PlayList Saved')">Save</button>
+                    <button onclick="alert('playlist saved')">Save</button>   
                 </footer>
             </main>
         </div>
@@ -277,7 +288,7 @@
                 description: "sun falling down",
             }]
             let url = new URLSearchParams(window.location.search);
-            
+            let form = document.getElementById("Save");
             addALLSongsPlaylist();
             addALLSongsPlaylist2();
             
@@ -460,8 +471,9 @@
                     }
                 }
             }
+
             function backPage() {
-                let ref = 'DJTimeSlot.html?' + url;
+                let ref = 'DJTimeSlot?' + url;
                 window.location.href=ref;
             }
     </script>
