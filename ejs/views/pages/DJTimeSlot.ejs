@@ -144,7 +144,7 @@
                 width: 200px;
             }
             .border .content .box .Previous #prevList button {
-                margin-right: 10%;
+                margin-right: 9%;
                 padding: 10px;
                 border-bottom: 2px solid #a9a9a9;
                 border-left: 2px solid #a9a9a9;
@@ -254,21 +254,15 @@
                         </table>
                     </article>
                     <article class="Previous">
-                        <div class="listHead"><h1 id="name" style="display: inline-block;">PlayList Name</h1><h1 id="Description" style="display: inline-block;"> Description</h1><h1 id="button" style="display: inline-block;margin-left: 40%;"> Option</h1></div>
+                        <div class="listHead"><h1 id="name" style="display: inline-block;">PlayList Name</h1><h1 id="Description" style="display: inline-block;"> Description</h1><h1 id="button" style="display: inline-block;margin-left: 33%;"> Add Songs from Playlist</h1></div>
                         <ul id="prevList" style="list-style-type: none;">
-                            <% playlists.forEach(function(playlist) { %>
-                            <li>
-                                <p id="Name" style="display:inline-block"><%=playlist.Name %></p>
-                                <p id="desc" style="display:inline-block"><%=playlist.description %></p>
-                                <button id="option" onclick="pageNext2()">Option</button>
-                            </li>
-                            <% }); %>
                         </ul>
                     </article>
                 </section>
             </main>
         </div>
         <script>
+            /*
             let playlist = [
             {
                 song: "WOW SONG",
@@ -293,50 +287,22 @@
             {
                 song: "sunset lover",
                 description: "by biscuit and great for sunsets",
-            }]
-
-            let prevPlaylists = [];
-
-            let url = new URLSearchParams(window.location.search);
-            let time = "";
+            }]*/
             let editedRow = 0;
-            if(url == null || url == '') {
-                let list = document.getElementById("prevList");
-                let play = document.createElement('li');
-                let Name = document.createElement('p');   
-                Name.style.display = "inline-block";
-                let nameText = document.createTextNode("No playlist");
-                Name.appendChild(nameText);
-                play.appendChild(Name);
-                list.appendChild(play);
-            }
-            else {
-                let param = url.get("timeslot");
-                let params = param.split("?");
-                let timeslot = params[0];
-                let dateString = params[1];
-                let dateA = dateString.split("=");
-                let date = dateA[1];
-                let header = document.getElementById("head");
-                header.innerHTML = date + " Time: " + timeslot;
-                time = timeslot;
-                getALLPlaylist();
-                addALLSongsPlaylist();
-            } 
-            function getALLPlaylist() {
-                let list = document.querySelectorAll('li');
-                for(let playlist of list) {    
-                    let Name = playlist.querySelector("#Name");
-                    let desc = playlist.querySelector("#desc");
-                    let play = {
-                        Name: "",
-                        description: "",
-                    }
-                    play.Name = Name.innerHTML;
-                    play.description = desc.innerHTML;
-                    prevPlaylists.push(play);
-                }
-            }
+            let timeslot = <%-JSON.stringify(TimeSlot)%>
+           // console.log(timeslot);
+            let prevPlaylists = timeslot.Playlists;
+            //console.log(prevPlaylists);
+            let header = document.getElementById("head");
+            let time = timeslot.Time
+            console.log(time);
+            let date = timeslot.Date;
+            console.log(date);
+            header.innerHTML = "Date: "+ date + " Time: " + time;
+            let playlist = timeslot.Playlist;
+            addALLprevPlaylist()
+            addALLSongsPlaylist();
+            
 
             function addALLprevPlaylist() {
                 let list = document.getElementById("prevList");
@@ -350,27 +316,26 @@
                     let Name = document.createElement('p');
                     Name.setAttribute('id', 'Name');  
                     Name.style.display = "inline-block";          
-                    Name.innerHTML = prevPlaylist[0];                
+                    Name.innerHTML = prevPlaylist[1];                
                     play.appendChild(Name);
                     list.appendChild(play);
                     let desc = document.createElement('p');
                     desc.setAttribute('id', 'desc');   
                     desc.style.display = "inline-block";
-                    desc.innerHTML = prevPlaylist[1];         
+                    desc.innerHTML = prevPlaylist[2];         
                     play.appendChild(desc);
                     list.appendChild(play);
                     let optionB = document.createElement('BUTTON');
                     optionB.setAttribute('id', 'option');              
-                    let buText = document.createTextNode("Option");       
+                    let buText = document.createTextNode("Add Songs");       
                     optionB.appendChild(buText);
+                    optionB.addEventListener('click',() => pageNext2(prevPlaylist[1]));
                     play.appendChild(optionB);
                     list.appendChild(play);
-                }
-                let timeButtons = document.querySelectorAll('#option');
-                timeButtons.forEach(addListeners);           
+                }          
             } 
 
-            function addALLSongsPlaylist() { //---------------------------------------------------------------------------------------------------------------------------------------------------
+            function addALLSongsPlaylist() { 
                 let tb = document.getElementById("k");
                 while(tb.firstElementChild) {
                     let child = tb.firstElementChild;
@@ -402,12 +367,36 @@
                     tb.appendChild(row);             
                 }
             } 
-
-            function addListeners(option) {
-                option.addEventListener("click",pageNext2);
-            }
-            function pageNext2() {
-                let ref = 'DJPlaylist?' + url;
+            function pageNext2(name) {
+                let ref = 'DJPlaylist';
+                const fetchPromise = fetch('http://localhost:8080/DJTimeSlot',{
+                method: 'POST',
+                cache: "no-store",
+                headers:{
+                    'Accept': 'application/json',
+                   'Content-Type': 'application/json' 
+                }, 
+                body: JSON.stringify({
+                    playName: name,
+                    page: 1,
+                    songName: "",
+                    description: "",
+                    index: 0
+                })
+            });
+            fetchPromise.then(function(response) {
+                responseClone = response.clone();
+                console.log(response);
+                return response.json();
+            }).then(function(data) {
+                console.log(data.ThisPlay);
+            }, function(rejectionReason) { 
+                console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                responseClone.text() 
+                .then(function (bodyText) {
+                    console.log('Received the following instead of valid JSON:', bodyText);
+                });
+            });
                 window.location.href=ref;
             }
             function editRow(index) {
@@ -434,9 +423,41 @@
                 }
                 playlist[editedRow].description = form.input.value;
                 let box = document.getElementById("editpopup");
-                box.close();
-                addALLSongsPlaylist();
-                editedRow = 0;
+                box.close(playlist[editedRow].song);
+                updateDB(playlist[editedRow].song,playlist[editedRow].description,editedRow);
+            }
+
+            function updateDB(song,desc,row) {
+                const fetchPromise = fetch('http://localhost:8080/DJTimeSlot',{
+                method: 'POST',
+                cache: "no-store",
+                headers:{
+                    'Accept': 'application/json',
+                   'Content-Type': 'application/json' 
+                }, 
+                body: JSON.stringify({
+                    playName: "",
+                    page: 0,
+                    songName: song,
+                    description: desc,
+                    index: row
+                })
+            });
+            fetchPromise.then(function(response) {
+                responseClone = response.clone();
+                console.log(response);
+                return response.json();
+            }).then(function(data) {
+                console.log(data.ThisPlaylist);
+                playlist = data.ThisPlaylist;
+                window.location.reload();
+            }, function(rejectionReason) { 
+                console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                responseClone.text() 
+                .then(function (bodyText) {
+                    console.log('Received the following instead of valid JSON:', bodyText);
+                });
+            });
             }
 
             function searchPrev(form) {

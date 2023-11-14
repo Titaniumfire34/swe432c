@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<htm lang="en">
+<html lang="en">
     <head>
         <link rel="stylesheet" href="css/DJStyle.css">
         <title>DJHome</title>
@@ -232,96 +232,8 @@
             </main>
         </div>
         <script>
-            let week = [
-                {
-                    Date: "October 1st 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm"]
-                },
-                {
-                    Date: "October 2nd 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm"]
-                },
-                {
-                    Date: "October 3rd 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm","7:00pm","9:00pm","10:00pm"]
-                },
-                {
-                    Date: "October 4th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","3:00pm"]
-                },
-                {
-                    Date: "October 5th 2023", 
-                    timeslots: ["12:00pm"]
-                },
-                {
-                    Date: "October 6th 2023", 
-                    timeslots: ["2:30pm","3:00pm"]
-                },
-                {
-                    Date: "October 7th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","11:30am","12:00pm","12:30pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm","11:30pm"]
-                },
-            ]
-            let leftWeek = [
-                {
-                    Date: "September 24th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm"]
-                },
-                {
-                    Date: "September 25th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm"]
-                },
-                {
-                    Date: "September 26th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","11:30am","12:00pm","12:30pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm","11:30pm"]
-                },
-                {
-                    Date: "September 27th 2023", 
-                    timeslots: ["2:30pm","3:00pm"]
-                },
-                {
-                    Date: "September 28th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm","7:00pm","9:00pm","10:00pm"]
-                },
-                {
-                    Date: "September 29th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm"]
-                },
-                {
-                    Date: "September 30th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","1:30pm","2:00pm","2:30pm","3:00pm"]
-                },
-            ]
-            let rightWeek = [
-                {
-                    Date: "October 8th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm"]
-                },
-                {
-                    Date: "October 9th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm","7:00pm","9:00pm","10:00pm"]
-                },
-                {
-                    Date: "October 10th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","1:30pm","2:00pm","2:30pm","3:00pm"]
-                },
-                {
-                    Date: "October 11th 2023", 
-                    timeslots: ["2:30pm","3:00pm"]
-                },
-                {
-                    Date: "October 12th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","11:30am","12:00pm","12:30pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm", "4:00pm","5:00pm","6:00pm","7:00pm","9:00pm","10:00pm","11:00pm","11:30pm"]
-                },
-                {
-                    Date: "October 13th 2023", 
-                    timeslots: ["12:00pm"]
-                },
-                {
-                    Date: "October 14th 2023", 
-                    timeslots: ["9:00am","10:00am","11:00am","12:00pm","1:00pm","1:30pm","2:00pm","2:30pm","3:00pm"]
-                },
-            ]
+            let weekNumber = 1;
+            let week = <%-JSON.stringify(ThisWeek)%>
             let dayVal = Object.values(week[0]);
             let day2Val = Object.values(week[1]);
             let day3Val = Object.values(week[2]);
@@ -329,106 +241,173 @@
             let day5Val = Object.values(week[4]);
             let day6Val = Object.values(week[5]);
             let day7Val = Object.values(week[6]);
-            //add changeable weeks
-            //let leftArrow = document.getElementById("arrowl");
-            //leftArrow.addEventListener("click",leftW);
-            //let rightArrow = document.getElementById("arrowr");
-           // rightArrow.addEventListener("click",rightW);
             let d = document.getElementById("day1");
+            d.innerHTML = dayVal[1];
             d.addEventListener("click",dayHandler);
             let d2 = document.getElementById("day2");
+            d2.innerHTML = day2Val[1];
             d2.addEventListener("click",day2Handler);
             let d3 = document.getElementById("day3");
+            d3.innerHTML = day3Val[1];
             d3.addEventListener("click",day3Handler);       
             let d4 = document.getElementById("day4");
+            d4.innerHTML = day4Val[1];
             d4.addEventListener("click",day4Handler);
             let d5 = document.getElementById("day5");
+            d5.innerHTML = day5Val[1];
             d5.addEventListener("click",day5Handler);
             let d6 = document.getElementById("day6");
+            d6.innerHTML = day6Val[1];
             d6.addEventListener("click",day6Handler);
             let d7 = document.getElementById("day7");
+            d7.innerHTML = day7Val[1];
             d7.addEventListener("click",day7Handler);
+            console.log("here");
             
-            function leftW() {
-                dayVal = Object.values(leftWeek[0]); 
-                d.innerHTML = dayVal[0];    
-                day2Val = Object.values(leftWeek[1]);
-                d2.innerHTML = day2Val[0]; 
-                day3Val = Object.values(leftWeek[2]);
-                d3.innerHTML = day3Val[0];
-                day4Val = Object.values(leftWeek[3]);
-                d4.innerHTML = day4Val[0];
-                day5Val = Object.values(leftWeek[4]);
-                d5.innerHTML = day5Val[0];
-                day6Val = Object.values(leftWeek[5]);
-                d6.innerHTML = day6Val[0];
-                day7Val = Object.values(leftWeek[6]);
-                d7.innerHTML = day7Val[0];
+            async function leftW() {
+                if(weekNumber == 1) {
+                    weekNumber--;
+                }
+                const fetchPromise = fetch('http://localhost:8080/DJHomepage',{
+                method: 'POST',
+                cache: "no-store",
+                headers:{
+                    'Accept': 'application/json',
+                   'Content-Type': 'application/json' 
+                }, 
+                body: JSON.stringify({
+                    WeekNum: weekNumber,
+                    page: 0,
+                    Date: "",
+                    Time: ""
+                })
+            });
+            fetchPromise.then(function(response) {
+                responseClone = response.clone();
+                console.log(response);
+                return response.json();
+            }).then(function(data) {
+                week = data.ThisWeek;
+                changeData(week);
+                console.log(data.ThisWeek);
+            }, function(rejectionReason) { 
+                console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                responseClone.text() 
+                .then(function (bodyText) {
+                    console.log('Received the following instead of valid JSON:', bodyText);
+                });
+            });
+            window.location.reload(); 
+            }
+
+            function changeData(nweek) {
+                //console.log(nweek);
+                let dayVal = Object.values(nweek[0]);
+                console.log(dayVal);
+                d.innerHTML = dayVal[1];
+                let day2Val = Object.values(nweek[1]);
+                d2.innerHTML = day2Val[1];
+                let day3Val = Object.values(nweek[2]);
+                d3.innerHTML = day3Val[1];
+                let day4Val = Object.values(nweek[3]);
+                d4.innerHTML = day4Val[1];
+                let day5Val = Object.values(nweek[4]);
+                d5.innerHTML = day5Val[1];
+                let day6Val = Object.values(nweek[5]);
+                d6.innerHTML = day6Val[1];
+                let day7Val = Object.values(nweek[6]);
+                d7.innerHTML = day7Val[1];
+                d.addEventListener("click",dayHandler);
+                d2.addEventListener("click",day2Handler);
+                d3.addEventListener("click",day3Handler);       
+                d4.addEventListener("click",day4Handler);
+                d5.addEventListener("click",day5Handler);
+                d6.addEventListener("click",day6Handler);
+                d7.addEventListener("click",day7Handler);
             }
 
             function rightW() {
-                dayVal = Object.values(rightWeek[0]);
-                d.innerHTML = dayVal[0];
-                day2Val = Object.values(rightWeek[1]);
-                d2.innerHTML = day2Val[0]; 
-                day3Val = Object.values(rightWeek[2]);
-                d3.innerHTML = day3Val[0];
-                day4Val = Object.values(rightWeek[3]);
-                d4.innerHTML = day4Val[0];
-                day5Val = Object.values(rightWeek[4]);
-                d5.innerHTML = day5Val[0];
-                day6Val = Object.values(rightWeek[5]);
-                d6.innerHTML = day6Val[0];
-                day7Val = Object.values(rightWeek[6]);
-                d7.innerHTML = day7Val[0];
+                const fetchPromise = fetch('http://localhost:8080/DJHomepage',{
+                method: 'POST',
+                cache: "no-store",
+                headers:{
+                    'Accept': 'application/json',
+                   'Content-Type': 'application/json' 
+                }, 
+                body: JSON.stringify({
+                    WeekNum: weekNumber,
+                    page: 0,
+                    Date: "",
+                    Time: ""
+                })
+            });
+            fetchPromise.then(function(response) {
+                responseClone = response.clone();
+                console.log(response);
+                return response.json();
+            }).then(function(data) {
+                week = data.ThisWeek;
+                changeData(week);
+                console.log(data.ThisWeek);
+            }, function(rejectionReason) { 
+                console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                responseClone.text() 
+                .then(function (bodyText) {
+                    console.log('Received the following instead of valid JSON:', bodyText);
+                });
+            });
+            window.location.reload(); 
             }
+
             function dayHandler() {
+                console.log(dayVal);
                 let section = document.getElementById("Timeslots");
-                document.getElementById("date").innerHTML = "Date: " + dayVal[0];
+                document.getElementById("date").innerHTML = "Date: " + dayVal[1];
                 while(section.firstElementChild) {
                     let child = section.firstElementChild;
                     section.removeChild(child);
                 }
-                for(let times of dayVal[1]) {
+                for(let times of dayVal[4]) {
+                    let tSlot = Object.values(times);
                     let timeSlot = document.createElement('BUTTON');
                     timeSlot.setAttribute('id', 'timeslot');
-                    let time = document.createTextNode(times);
+                    let time = document.createTextNode(tSlot[0]);
                     timeSlot.appendChild(time);
                     section.appendChild(timeSlot);
                 }
                 let timeButtons = document.querySelectorAll('#timeslot');
                 timeButtons.forEach(addListen)
             }
-
             function day2Handler() {
                 let section = document.getElementById("Timeslots");
-                document.getElementById("date").innerHTML = "Date: " + day2Val[0];
+                document.getElementById("date").innerHTML = "Date: " + day2Val[1];
                 while(section.firstElementChild) {
                     let child = section.firstElementChild;
                     section.removeChild(child);
                 }
-                for(let times of day2Val[1]) {
+                for(let times of day2Val[4]) {
+                    let tSlot = Object.values(times);
                     let timeSlot = document.createElement('BUTTON');
                     timeSlot.setAttribute('id', 'timeslot');
-                    let time = document.createTextNode(times);
+                    let time = document.createTextNode(tSlot[0]);
                     timeSlot.appendChild(time);
                     section.appendChild(timeSlot);
                 }
                 let timeButtons = document.querySelectorAll('#timeslot');
                 timeButtons.forEach(addListen)
             }
-
             function day3Handler() {
                 let section = document.getElementById("Timeslots");
-                document.getElementById("date").innerHTML = "Date: " + day3Val[0];
+                document.getElementById("date").innerHTML = "Date: " + day3Val[1];
                 while(section.firstElementChild) {
                     let child = section.firstElementChild;
                     section.removeChild(child);
                 }
-                for(let times of day3Val[1]) {
+                for(let times of day3Val[4]) {
+                    let tSlot = Object.values(times);
                     let timeSlot = document.createElement('BUTTON');
                     timeSlot.setAttribute('id', 'timeslot');
-                    let time = document.createTextNode(times);
+                    let time = document.createTextNode(tSlot[0]);
                     timeSlot.appendChild(time);
                     section.appendChild(timeSlot);
                 }
@@ -437,15 +416,16 @@
             }
             function day4Handler() {
                 let section = document.getElementById("Timeslots");
-                document.getElementById("date").innerHTML = "Date: " + day4Val[0];
+                document.getElementById("date").innerHTML = "Date: " + day4Val[1];
                 while(section.firstElementChild) {
                     let child = section.firstElementChild;
                     section.removeChild(child);
                 }
-                for(let times of day4Val[1]) {
+                for(let times of day4Val[4]) {
+                    let tSlot = Object.values(times);
                     let timeSlot = document.createElement('BUTTON');
                     timeSlot.setAttribute('id', 'timeslot');
-                    let time = document.createTextNode(times);
+                    let time = document.createTextNode(tSlot[0]);
                     timeSlot.appendChild(time);
                     section.appendChild(timeSlot);
                 }
@@ -454,15 +434,16 @@
             }
             function day5Handler() {
                 let section = document.getElementById("Timeslots");
-                document.getElementById("date").innerHTML = "Date: " + day5Val[0];
+                document.getElementById("date").innerHTML = "Date: " + day5Val[1];
                 while(section.firstElementChild) {
                     let child = section.firstElementChild;
                     section.removeChild(child);
                 }
-                for(let times of day5Val[1]) {
+                for(let times of day5Val[4]) {
+                    let tSlot = Object.values(times);
                     let timeSlot = document.createElement('BUTTON');
                     timeSlot.setAttribute('id', 'timeslot');
-                    let time = document.createTextNode(times);
+                    let time = document.createTextNode(tSlot[0]);
                     timeSlot.appendChild(time);
                     section.appendChild(timeSlot);
                 }
@@ -471,15 +452,16 @@
             }
             function day6Handler() {
                 let section = document.getElementById("Timeslots");
-                document.getElementById("date").innerHTML = "Date: " + day6Val[0];
+                document.getElementById("date").innerHTML = "Date: " + day6Val[1];
                 while(section.firstElementChild) {
                     let child = section.firstElementChild;
                     section.removeChild(child);
                 }
-                for(let times of day6Val[1]) {
+                for(let times of day6Val[4]) {
+                    let tSlot = Object.values(times);
                     let timeSlot = document.createElement('BUTTON');
                     timeSlot.setAttribute('id', 'timeslot');
-                    let time = document.createTextNode(times);
+                    let time = document.createTextNode(tSlot[0]);
                     timeSlot.appendChild(time);
                     section.appendChild(timeSlot);
                 }
@@ -488,31 +470,61 @@
             }
             function day7Handler() {
                 let section = document.getElementById("Timeslots");
-                document.getElementById("date").innerHTML = "Date: " + day7Val[0];
+                document.getElementById("date").innerHTML = "Date: " + day7Val[1];
                 while(section.firstElementChild) {
                     let child = section.firstElementChild;
                     section.removeChild(child);
                 }
-                for(let times of day7Val[1]) {
+                for(let times of day7Val[4]) {
+                    let tSlot = Object.values(times);
                     let timeSlot = document.createElement('BUTTON');
                     timeSlot.setAttribute('id', 'timeslot');
-                    let time = document.createTextNode(times);
+                    let time = document.createTextNode(tSlot[0]);
                     timeSlot.appendChild(time);
                     section.appendChild(timeSlot);
                 }
                 let timeButtons = document.querySelectorAll('#timeslot');
                 timeButtons.forEach(addListen)
             }
+            
             function addListen(time) {
                 let timeS = time.innerHTML;
                 time.addEventListener("click",() => pageNext(timeS))
             }
+
             function pageNext(times) {  
-                let ref = 'DJTimeSlot?timeslot=';
-                let da = '?date=';
+                let ref = 'DJTimeSlot';
+                let da = "";
                 da+= document.getElementById("date").innerHTML;
-                ref +=times;
-                ref+=da;
+                let dateA = da.split(": ");
+                let date = dateA[1];
+                const fetchPromise = fetch('http://localhost:8080/DJHomepage',{
+                method: 'POST',
+                cache: "no-store",
+                headers:{
+                    'Accept': 'application/json',
+                   'Content-Type': 'application/json' 
+                }, 
+                body: JSON.stringify({
+                    WeekNum: weekNumber,
+                    page: 1,
+                    Date: date,
+                    Time: times
+                })
+            });
+            fetchPromise.then(function(response) {
+                responseClone = response.clone();
+                console.log(response);
+                return response.json();
+            }).then(function(data) {
+                console.log(data.ThisDate);
+            }, function(rejectionReason) { 
+                console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                responseClone.text() 
+                .then(function (bodyText) {
+                    console.log('Received the following instead of valid JSON:', bodyText);
+                });
+            });
                 window.location.href=ref;   
             }
             </script>
