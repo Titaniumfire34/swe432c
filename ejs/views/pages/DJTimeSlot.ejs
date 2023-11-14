@@ -370,33 +370,33 @@
             function pageNext2(name) {
                 let ref = 'DJPlaylist';
                 const fetchPromise = fetch('http://localhost:8080/DJTimeSlot',{
-                method: 'POST',
-                cache: "no-store",
-                headers:{
-                    'Accept': 'application/json',
-                   'Content-Type': 'application/json' 
-                }, 
-                body: JSON.stringify({
-                    playName: name,
-                    page: 1,
-                    songName: "",
-                    description: "",
-                    index: 0
-                })
-            });
-            fetchPromise.then(function(response) {
-                responseClone = response.clone();
-                console.log(response);
-                return response.json();
-            }).then(function(data) {
-                console.log(data.ThisPlay);
-            }, function(rejectionReason) { 
-                console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
-                responseClone.text() 
-                .then(function (bodyText) {
-                    console.log('Received the following instead of valid JSON:', bodyText);
+                    method: 'POST',
+                    cache: "no-store",
+                    headers:{
+                        'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                    }, 
+                    body: JSON.stringify({
+                        playName: name,
+                        page: 1,
+                        songName: "",
+                        description: "",
+                        index: 0
+                    })
                 });
-            });
+                fetchPromise.then(function(response) {
+                    responseClone = response.clone();
+                    console.log(response);
+                    return response.json();
+                }).then(function(data) {
+                    console.log(data.ThisPlay);
+                }, function(rejectionReason) { 
+                    console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                    responseClone.text() 
+                    .then(function (bodyText) {
+                        console.log('Received the following instead of valid JSON:', bodyText);
+                    });
+                });
                 window.location.href=ref;
             }
             function editRow(index) {
@@ -429,35 +429,35 @@
 
             function updateDB(song,desc,row) {
                 const fetchPromise = fetch('http://localhost:8080/DJTimeSlot',{
-                method: 'POST',
-                cache: "no-store",
-                headers:{
-                    'Accept': 'application/json',
-                   'Content-Type': 'application/json' 
-                }, 
-                body: JSON.stringify({
-                    playName: "",
-                    page: 0,
-                    songName: song,
-                    description: desc,
-                    index: row
-                })
-            });
-            fetchPromise.then(function(response) {
-                responseClone = response.clone();
-                console.log(response);
-                return response.json();
-            }).then(function(data) {
-                console.log(data.ThisPlaylist);
-                playlist = data.ThisPlaylist;
-                window.location.reload();
-            }, function(rejectionReason) { 
-                console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
-                responseClone.text() 
-                .then(function (bodyText) {
-                    console.log('Received the following instead of valid JSON:', bodyText);
+                    method: 'POST',
+                    cache: "no-store",
+                    headers:{
+                        'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                    }, 
+                    body: JSON.stringify({
+                        playName: "",
+                        page: 0,
+                        songName: song,
+                        description: desc,
+                        index: row
+                    })
                 });
-            });
+                fetchPromise.then(function(response) {
+                    responseClone = response.clone();
+                    console.log(response);
+                    return response.json();
+                }).then(function(data) {
+                    console.log(data.ThisPlaylist);
+                    playlist = data.ThisPlaylist;
+                    window.location.reload();
+                }, function(rejectionReason) { 
+                    console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                    responseClone.text() 
+                    .then(function (bodyText) {
+                        console.log('Received the following instead of valid JSON:', bodyText);
+                    });
+                });
             }
 
             function searchPrev(form) {

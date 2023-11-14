@@ -38,7 +38,7 @@ const prevSchema = new mongoose.Schema({
           
 });
 const day = mongoose.model('day', daySchema);
-/*
+
 const day1 = new day({
   Date: "October 1st 2023",
   Week: 1,
@@ -1020,7 +1020,7 @@ day18.save();
 day19.save();
 day20.save();
 day21.save();
-*/
+
 const prevPlay = mongoose.model('prevPlay',prevSchema);
 
 const prev1 = new prevPlay({
