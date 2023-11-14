@@ -249,7 +249,7 @@
                     </form>
                     <br/>
                     <button id="back" onclick="backPage()">Back</button>   
-                    <button id="save" onclick="alert('playlist saved')">Save Only</button>   
+                    <button id="save" onclick="savePlaylist()">Save Only</button>   
                 </footer>
             </main>
         </div>
@@ -509,10 +509,66 @@
                 window.location.href=ref;
             }
             function savePlaylist() {
-                
+                const fetchPromise = fetch('http://localhost:8080/DJPlaylist',{
+                    method: 'POST',
+                    cache: "no-store",
+                    headers:{
+                        'Accept': 'application/json',
+                    'Content-Type': 'application/json' 
+                    }, 
+                    body: JSON.stringify({
+                        page: 0,
+                        newPlaylist: asPlaylist,
+                        playName: "",
+                        playDescription: ""
+                    })
+                });
+                fetchPromise.then(function(response) {
+                    responseClone = response.clone();
+                    console.log(response);
+                    return response.json();
+                }).then(function(data) {
+                    console.log(data.ThisPlay);
+                }, function(rejectionReason) { 
+                    console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                    responseClone.text() 
+                    .then(function (bodyText) {
+                        console.log('Received the following instead of valid JSON:', bodyText);
+                    });
+                });
             }
             function saveAndAdd(form) {
-
+                if(form.inputbox.value != null) {
+                    const fetchPromise = fetch('http://localhost:8080/DJPlaylist',{
+                        method: 'POST',
+                        cache: "no-store",
+                        headers:{
+                            'Accept': 'application/json',
+                        'Content-Type': 'application/json' 
+                        }, 
+                        body: JSON.stringify({
+                            page: 1,
+                            newPlaylist: asPlaylist,
+                            playName: form.inputbox.value,
+                            playDescription: form.input.value
+                        })
+                    });
+                    fetchPromise.then(function(response) {
+                        responseClone = response.clone();
+                        console.log(response);
+                        return response.json();
+                    }).then(function(data) {
+                        console.log(data.ThisPlay);
+                    }, function(rejectionReason) { 
+                        console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
+                        responseClone.text() 
+                        .then(function (bodyText) {
+                            console.log('Received the following instead of valid JSON:', bodyText);
+                        });
+                    });
+                    let ref = 'DJTimeSlot';
+                    window.location.href=ref;
+                }
             }
     </script>
     </body>

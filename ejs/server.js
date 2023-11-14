@@ -31,7 +31,7 @@ const prevSchema = new mongoose.Schema({
   description: String,
   Songs: [
     {
-      Song: String,
+      song: String,
       description: String,
     }
   ]
@@ -1022,45 +1022,45 @@ day20.save();
 day21.save();
 */
 const prevPlay = mongoose.model('prevPlay',prevSchema);
-/* 
+
 const prev1 = new prevPlay({
   Name: "summer playlist",
   description: "summer relaxer",
   Songs: [
     {
-        Song: "lost within",
+        song: "lost within",
         description: "footbal yay",
     },
     {
-        Song: "blue boi",
+        song: "blue boi",
         description: "futball ayy",
     },
     {
-        Song: "lofi1",
+        song: "lofi1",
         description: "lofi song",
     },
     {
-        Song: "lofi2",
+        song: "lofi2",
         description: "lofi song",
     },
     {
-        Song: "lofi3",
+        song: "lofi3",
         description: "lofi song",
     },
     {
-        Song: "lofi4",
+        song: "lofi4",
         description: "lofi song",
     },
     {
-        Song: "WOW SONG25",
+        song: "WOW SONG25",
         description: "wow that a song too many",
     },
     {
-        Song: "in my dreams",
+        song: "in my dreams",
         description: "by george washingtion",
     },
     {
-        Song: "lover of sunsets",
+        song: "lover of sunsets",
         description: "sun falling down",
     }]
 });
@@ -1069,39 +1069,39 @@ const prev2 = new prevPlay({
   description: "to start off the year",
   Songs: [
     {
-        Song: "lost within",
+        song: "lost within",
         description: "footbal yay",
     },
     {
-        Song: "blue boi",
+        song: "blue boi",
         description: "futball ayy",
     },
     {
-        Song: "lofi1",
+        song: "lofi1",
         description: "lofi song",
     },
     {
-        Song: "lofi2",
+        song: "lofi2",
         description: "lofi song",
     },
     {
-        Song: "lofi3",
+        song: "lofi3",
         description: "lofi song",
     },
     {
-        Song: "lofi4",
+        song: "lofi4",
         description: "lofi song",
     },
     {
-        Song: "WOW SONG25",
+        song: "WOW SONG25",
         description: "wow that a song too many",
     },
     {
-        Song: "in my dreams",
+        song: "in my dreams",
         description: "by george washingtion",
     },
     {
-        Song: "lover of sunsets",
+        song: "lover of sunsets",
         description: "sun falling down",
     }]
 });
@@ -1110,39 +1110,39 @@ const prev3 = new prevPlay({
   description: "first try",
   Songs: [
     {
-        Song: "lost within",
+        song: "lost within",
         description: "footbal yay",
     },
     {
-        Song: "blue boi",
+        song: "blue boi",
         description: "futball ayy",
     },
     {
-        Song: "lofi1",
+        song: "lofi1",
         description: "lofi song",
     },
     {
-        Song: "lofi2",
+        song: "lofi2",
         description: "lofi song",
     },
     {
-        Song: "lofi3",
+        song: "lofi3",
         description: "lofi song",
     },
     {
-        Song: "lofi4",
+        song: "lofi4",
         description: "lofi song",
     },
     {
-        Song: "WOW SONG25",
+        song: "WOW SONG25",
         description: "wow that a song too many",
     },
     {
-        Song: "in my dreams",
+        song: "in my dreams",
         description: "by george washingtion",
     },
     {
-        Song: "lover of sunsets",
+        song: "lover of sunsets",
         description: "sun falling down",
     }]
 });
@@ -1151,39 +1151,39 @@ const prev4 = new prevPlay({
   description: "lofi songs",
   Songs: [
     {
-        Song: "lost within",
+        song: "lost within",
         description: "footbal yay",
     },
     {
-        Song: "blue boi",
+        song: "blue boi",
         description: "futball ayy",
     },
     {
-        Song: "lofi1",
+        song: "lofi1",
         description: "lofi song",
     },
     {
-        Song: "lofi2",
+        song: "lofi2",
         description: "lofi song",
     },
     {
-        Song: "lofi3",
+        song: "lofi3",
         description: "lofi song",
     },
     {
-        Song: "lofi4",
+        song: "lofi4",
         description: "lofi song",
     },
     {
-        Song: "WOW SONG25",
+        song: "WOW SONG25",
         description: "wow that a song too many",
     },
     {
-        Song: "in my dreams",
+        song: "in my dreams",
         description: "by george washingtion",
     },
     {
-        Song: "lover of sunsets",
+        song: "lover of sunsets",
         description: "sun falling down",
     }]
 });
@@ -1192,39 +1192,39 @@ const prev5 = new prevPlay({
   description: "scary",
   Songs: [
     {
-        Song: "lost within",
+        song: "lost within",
         description: "footbal yay",
     },
     {
-        Song: "blue boi",
+        song: "blue boi",
         description: "futball ayy",
     },
     {
-        Song: "lofi1",
+        song: "lofi1",
         description: "lofi song",
     },
     {
-        Song: "lofi2",
+        song: "lofi2",
         description: "lofi song",
     },
     {
-        Song: "lofi3",
+        song: "lofi3",
         description: "lofi song",
     },
     {
-        Song: "lofi4",
+        song: "lofi4",
         description: "lofi song",
     },
     {
-        Song: "WOW SONG25",
+        song: "WOW SONG25",
         description: "wow that a song too many",
     },
     {
-        Song: "in my dreams",
+        song: "in my dreams",
         description: "by george washingtion",
     },
     {
-        Song: "lover of sunsets",
+        song: "lover of sunsets",
         description: "sun falling down",
     }]
 });
@@ -1233,39 +1233,39 @@ const prev6 = new prevPlay({
   description: "jolly jolly christmas",
   Songs: [
     {
-        Song: "lost within",
+        song: "lost within",
         description: "footbal yay",
     },
     {
-        Song: "blue boi",
+        song: "blue boi",
         description: "futball ayy",
     },
     {
-        Song: "lofi1",
+        song: "lofi1",
         description: "lofi song",
     },
     {
-        Song: "lofi2",
+        song: "lofi2",
         description: "lofi song",
     },
     {
-        Song: "lofi3",
+        song: "lofi3",
         description: "lofi song",
     },
     {
-        Song: "lofi4",
+        song: "lofi4",
         description: "lofi song",
     },
     {
-        Song: "WOW SONG25",
+        song: "WOW SONG25",
         description: "wow that a song too many",
     },
     {
-        Song: "in my dreams",
+        song: "in my dreams",
         description: "by george washingtion",
     },
     {
-        Song: "lover of sunsets",
+        song: "lover of sunsets",
         description: "sun falling down",
     }]
 });
@@ -1275,7 +1275,6 @@ prev3.save();
 prev4.save();
 prev5.save();
 prev6.save();
-*/
 app.set('view engine','ejs');
 // tell node to use json and HTTP header features in body-parser
 app.use(express.json());
@@ -1379,26 +1378,25 @@ app.post('/DJTimeSlot', async function(req, res) {
     let curDay = timeslotDay[0];
     let newTimeSlots = [];
     let i = 0;
-    let j = 0;
     console.log(curDay.timeslots);
     for(let time of curDay.timeslots) {
+      i = 0;
       if(time.Time == currentTimeslot.Time) {
         let newTime = time;
         for(let song of time.Playlists) {
-          if(req.body.index == j) {
+          if(req.body.index == i) {
             song.song = req.body.songName;
             song.description = req.body.description;
-            newTime.Playlists[j] = song;
+            newTime.Playlists[i] = song;
             break;
           }
-          j+=1;
+          i+=1;
         }
         newTimeSlots.push(newTime);
       }
       else {
         newTimeSlots.push(time);
       }
-      i+=1;
     }
     curDay.timeslots = newTimeSlots;
     let updatedTime = await day.updateOne({Date: curDay.Date}, curDay);
@@ -1412,6 +1410,54 @@ app.post('/DJTimeSlot', async function(req, res) {
 app.get('/DJPlaylist', async function(req, res) {
   res.render('pages/DJPlaylist', {TPlaylists: currentTimeslot});
 });
+
+app.post('/DJPlaylist', async function(req, res) {
+  if(req.body.page == 1) {
+    currentTimeslot.Playlist = req.body.newPlaylist;
+    let timeslotDay = await day.find({Date: currentTimeslot.Date});
+    let curDay = timeslotDay[0];
+    let newTimeSlots = [];
+    for(let time of curDay.timeslots) {
+      if(time.Time == currentTimeslot.Time) {
+        time.Playlists = req.body.newPlaylist;
+        newTimeSlots.push(time);
+      }
+      else {
+        newTimeSlots.push(time);
+      }
+    }
+    curDay.timeslots = newTimeSlots;
+    let updatedTime = await day.updateOne({Date: curDay.Date}, curDay);
+    console.log(updatedTime);
+    const newprevplay = new prevPlay({
+      Name: req.body.playName,
+      description: req.body.playDescription,
+      Songs: req.body.newPlaylist
+    });
+    newprevplay.save();
+    res.send({ThisPlay: currentTimeslot.Playlist});
+  }
+  else if(req.body.page == 0) {
+    currentTimeslot.Playlist = req.body.newPlaylist;
+    let timeslotDay = await day.find({Date: currentTimeslot.Date});
+    let curDay = timeslotDay[0];
+    let newTimeSlots = [];
+    for(let time of curDay.timeslots) {
+      if(time.Time == currentTimeslot.Time) {
+        time.Playlists = req.body.newPlaylist;
+        newTimeSlots.push(time);
+      }
+      else {
+        newTimeSlots.push(time);
+      }
+    }
+    curDay.timeslots = newTimeSlots;
+    let updatedTime = await day.updateOne({Date: curDay.Date}, curDay);
+    console.log(updatedTime);
+    res.send({ThisPlay: currentTimeslot.Playlist});
+  }
+});
+
 // Use express to listen to port
 let port = 8080;
 app.listen(port, () => {
