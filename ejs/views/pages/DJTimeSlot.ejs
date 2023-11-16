@@ -390,6 +390,7 @@
                     return response.json();
                 }).then(function(data) {
                     console.log(data.ThisPlay);
+                    window.location.href=ref;
                 }, function(rejectionReason) { 
                     console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
                     responseClone.text() 
@@ -397,7 +398,7 @@
                         console.log('Received the following instead of valid JSON:', bodyText);
                     });
                 });
-                window.location.href=ref;
+
             }
             function editRow(index) {
                 let rowId = event.target.parentNode.parentNode.id;  

@@ -518,14 +518,14 @@
                 return response.json();
             }).then(function(data) {
                 console.log(data.ThisDate);
+                window.location.href=ref; 
             }, function(rejectionReason) { 
                 console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
                 responseClone.text() 
                 .then(function (bodyText) {
                     console.log('Received the following instead of valid JSON:', bodyText);
                 });
-            });
-                window.location.href=ref;   
+            });  
             }
             </script>
     </body>

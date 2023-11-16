@@ -77,8 +77,8 @@ const day1 = new day({
       Time: "10:00am",
       Playlists:[
         {
-            song: "WOW SONG",
-            description: "wow that a song",
+            song: "night song",
+            description: "night time song",
         },
         {
             song: "thats crazy",
@@ -171,15 +171,15 @@ const day2 = new day({
       Time: "9:00pm",
       Playlists:[
         {
-            song: "WOW SONG",
-            description: "wow that a song",
+            song: "meh SONG",
+            description: "meh that a song",
         },
         {
-            song: "thats crazy",
-            description: "coco",
+            song: "thats not crazy",
+            description: "not coco",
         },
         {
-            song: "lofi1",
+            song: "lofi55555",
             description: "lofi song",
         },
         {
@@ -1275,6 +1275,8 @@ prev3.save();
 prev4.save();
 prev5.save();
 prev6.save();
+
+
 app.set('view engine','ejs');
 // tell node to use json and HTTP header features in body-parser
 app.use(express.json());
@@ -1360,10 +1362,8 @@ app.post('/DJTimeSlot', async function(req, res) {
   if(req.body.page == 1) {
     console.log(req.body.playName);
     let grabPlay = await prevPlay.find({Name: req.body.playName})
-    console.log(grabPlay);
     let Playlistprev = grabPlay[0];
     let songs = JSON.parse(JSON.stringify(Playlistprev));
-    console.log(songs);
     currentTimeslot.prevPlaylist = songs.Songs;
     console.log(currentTimeslot.prevPlaylist);
     res.send({ThisPlay: grabPlay});
@@ -1408,6 +1408,7 @@ app.post('/DJTimeSlot', async function(req, res) {
 
 //playlist tab
 app.get('/DJPlaylist', async function(req, res) {
+  console.log("here" + currentTimeslot.prevPlaylist);
   res.render('pages/DJPlaylist', {TPlaylists: currentTimeslot});
 });
 

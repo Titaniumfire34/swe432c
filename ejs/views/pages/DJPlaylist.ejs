@@ -145,9 +145,20 @@
                 background-color: #202122;
             }
 
+            .border .content .Buttons #reset{
+                margin-left: 10px;
+                padding: 10px; 
+                display: inline;
+                border-bottom: 2px solid #a9a9a9;
+                border-left: 2px solid #a9a9a9;
+                border-top: 2px solid #a9a9a9 ;
+                border-right: 2px solid #a9a9a9; 
+                background-color: #202122;
+            }
+
             .border .content .Buttons #save{
                 padding: 10px; 
-                margin-left: 728px;
+                margin-left: 655px;
                 width: 250px;
                 border-bottom: 2px solid #a9a9a9;
                 border-left: 2px solid #a9a9a9;
@@ -248,7 +259,8 @@
                         <input type="button" id="formButton" style="width: 250px;"name="button" value="Save And Add to Previous Playlist" onclick="saveAndAdd(this.form)">
                     </form>
                     <br/>
-                    <button id="back" onclick="backPage()">Back</button>   
+                    <button id="back" onclick="backPage()">Back</button>
+                    <button id="reset" onclick="reset()">Reset</button>   
                     <button id="save" onclick="savePlaylist()">Save Only</button>   
                 </footer>
             </main>
@@ -319,11 +331,13 @@
                 description: "sun falling down",
             }]*/
             let playlists = <%-JSON.stringify(TPlaylists)%>
+            console.log(playlists.Playlist);
+            console.log(playlists.prevPlaylist);
             let asPlaylist = playlists.Playlist;
             let prevPlaylist = playlists.prevPlaylist;
             addALLSongsPlaylist();
             addALLSongsPlaylist2();
-            
+
             function addALLSongsPlaylist() { 
                 let tb = document.getElementById("prevTB");
                 while(tb.firstElementChild) {
@@ -331,6 +345,7 @@
                     tb.removeChild(child);
                 }
                 let i = 0;
+                console.log(prevPlaylist);
                 for(let song of prevPlaylist) {
                     let songS = Object.values(song);
                     let row = document.createElement("tr");
@@ -529,6 +544,7 @@
                     return response.json();
                 }).then(function(data) {
                     console.log(data.ThisPlay);
+                    window.location.reload();
                 }, function(rejectionReason) { 
                     console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
                     responseClone.text() 
@@ -538,6 +554,7 @@
                 });
             }
             function saveAndAdd(form) {
+                let ref = 'DJTimeSlot';
                 if(form.inputbox.value != null) {
                     const fetchPromise = fetch('http://localhost:8080/DJPlaylist',{
                         method: 'POST',
@@ -559,6 +576,7 @@
                         return response.json();
                     }).then(function(data) {
                         console.log(data.ThisPlay);
+                        window.location.href=ref;
                     }, function(rejectionReason) { 
                         console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
                         responseClone.text() 
@@ -566,9 +584,10 @@
                             console.log('Received the following instead of valid JSON:', bodyText);
                         });
                     });
-                    let ref = 'DJTimeSlot';
-                    window.location.href=ref;
                 }
+            }
+            function reset() {
+                window.location.reload();
             }
     </script>
     </body>
