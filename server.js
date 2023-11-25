@@ -9,7 +9,6 @@ const db = mongoose.connection;
 db.once('open', () => {
   console.log('connected to mongo');
 });
-
 const daySchema = new mongoose.Schema({
   Date: String,
   Week: Number,
@@ -26,6 +25,9 @@ const daySchema = new mongoose.Schema({
     }
   ]
 });
+
+
+
 const prevSchema = new mongoose.Schema({
   Name: String,
   description: String,
@@ -38,7 +40,7 @@ const prevSchema = new mongoose.Schema({
           
 });
 const day = mongoose.model('day', daySchema);
-
+/*
 const day1 = new day({
   Date: "October 1st 2023",
   Week: 1,
@@ -1020,9 +1022,9 @@ day18.save();
 day19.save();
 day20.save();
 day21.save();
-
+*/
 const prevPlay = mongoose.model('prevPlay',prevSchema);
-
+/*
 const prev1 = new prevPlay({
   Name: "summer playlist",
   description: "summer relaxer",
@@ -1275,7 +1277,7 @@ prev3.save();
 prev4.save();
 prev5.save();
 prev6.save();
-
+*/
 
 app.set('view engine','ejs');
 // tell node to use json and HTTP header features in body-parser
